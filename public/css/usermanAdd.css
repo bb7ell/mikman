@@ -1,0 +1,390 @@
+/* usermanAdd.css - Premium Design for Adding User Manager Users */
+
+.userman-add-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(13, 17, 23, 0.7) !important;
+    border: 1px solid rgba(124, 58, 237, 0.2) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4) !important;
+}
+
+.userman-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 12px;
+}
+
+.u-tab {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+}
+
+.u-tab.active {
+    background: rgba(124, 58, 237, 0.15);
+    border-color: var(--purple);
+    color: var(--purple);
+}
+
+.u-tab:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.form-group-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 25px 0 15px;
+    padding-right: 12px;
+}
+
+.purple-border { border-right: 4px solid var(--purple); color: var(--purple); }
+.cyan-border   { border-right: 4px solid var(--cyan);   color: var(--cyan);   }
+.orange-border { border-right: 4px solid var(--orange); color: var(--orange); }
+
+.main-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.secondary-form-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+}
+
+.hs-group {
+    margin-bottom: 18px;
+}
+
+.hs-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.required-star { color: var(--red); margin-right: 4px; }
+
+.hs-group input, 
+.hs-group select,
+.hs-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.hs-group input:focus, 
+.hs-group select:focus,
+.hs-group textarea:focus {
+    border-color: var(--purple);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-actions {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.btn-cancel-flat {
+    padding: 12px 25px;
+    color: var(--text-secondary);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-cancel-flat:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.btn-submit-premium {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 35px;
+    background: linear-gradient(135deg, var(--purple), #a855f7);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-submit-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+    .main-form-row, .secondary-form-row { grid-template-columns: 1fr; }
+    .userman-add-container { padding: 15px; }
+}
+
+/* Bulk Textarea Styles */
+#umBulkNames {
+    transition: border-color 0.3s, box-shadow 0.3s;
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) rgba(0,0,0,0.2);
+}
+
+#umBulkNames:focus {
+    border-color: var(--purple) !important;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+    outline: none;
+}
+
+/* Bulk Stats Card */
+#bulkStats {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Results Modal Tabs */
+.res-tab {
+    transition: all 0.3s;
+}
+
+.res-tab.active {
+    background: rgba(124, 58, 237, 0.05) !important;
+}
+
+/* Result Row */
+.res-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s;
+}
+
+.res-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.res-status-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.res-status-icon.success { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.res-status-icon.fail { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
+/* Custom Scrollbar for Results */
+#resListContainer::-webkit-scrollbar,
+#umBulkNames::-webkit-scrollbar {
+    width: 6px;
+}
+#resListContainer::-webkit-scrollbar-track,
+#umBulkNames::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+}
+#resListContainer::-webkit-scrollbar-thumb,
+#umBulkNames::-webkit-scrollbar-thumb {
+    background: rgba(124, 58, 237, 0.4);
+    border-radius: 10px;
+}
+#resListContainer::-webkit-scrollbar-thumb:hover,
+#umBulkNames::-webkit-scrollbar-thumb:hover {
+    background: var(--purple);
+}
+
+/* Processing Loader Animation */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.processing-loader svg {
+    filter: drop-shadow(0 0 10px rgba(124, 58, 237, 0.4));
+}
+
+#umCurrentTarget {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Success/Fail Card Hover */
+#umProcessSuccess:parent, #umProcessFail:parent {
+    transition: all 0.3s ease;
+}
+/* Ensure buttons are clickable */
+.btn-hs-submit {
+    position: relative;
+    z-index: 10;
+    cursor: pointer !important;
+}
+
+/* Radio Cards Styles */
+.radio-card {
+    cursor: pointer;
+    flex: 1;
+    min-width: 120px;
+    display: block;
+}
+
+.radio-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.radio-card-content {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.radio-card:hover .radio-card-content {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.radio-card input:checked + .radio-card-content {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: var(--purple);
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.2);
+}
+
+.radio-icon {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: relative;
+}
+
+.radio-card input:checked + .radio-card-content .radio-icon {
+    border-color: var(--purple);
+}
+
+.radio-card input:checked + .radio-card-content .radio-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--purple);
+    border-radius: 50%;
+}
+
+.radio-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+.radio-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Stat Mini Cards */
+.stat-mini-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.stat-value {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+/* Length Bars */
+.len-bar {
+    flex: 1;
+    background: var(--purple);
+    border-radius: 2px 2px 0 0;
+    min-height: 2px;
+    transition: height 0.3s ease;
+    opacity: 0.6;
+}
+
+.len-bar:hover {
+    opacity: 1;
+}
+
+/* Bulk Action Card Hover */
+.bulk-action-card:hover {
+    background: rgba(124, 58, 237, 0.1) !important;
+    border-color: var(--purple) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(124, 58, 237, 0.1);
+}
+
+.bulk-action-card:active {
+    transform: translateY(0);
+}
+
+/* Stat Card Pulse */
+.stat-mini-card {
+    transition: all 0.3s ease;
+}
+
+.stat-mini-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+

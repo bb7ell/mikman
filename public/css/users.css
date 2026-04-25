@@ -1,0 +1,309 @@
+/* ═══════════════════════════════════════════════════════════════════
+   users.css — Hotspot Users Page Styles
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Nav Badge ─────────────────────────────────────────────────── */
+.nav-badge {
+  margin-right: auto;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 100px;
+  background: rgba(124,58,237,.3);
+  color: #c4b5fd;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Stats Row ─────────────────────────────────────────────────── */
+.users-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.ustat-card {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all var(--transition);
+}
+.ustat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.3); }
+
+.ustat-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.ustat-icon svg { width: 22px; height: 22px; }
+
+.ustat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  white-space: nowrap;
+}
+.ustat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+/* ── Toolbar ───────────────────────────────────────────────────── */
+.users-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.users-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition);
+}
+.users-search-wrap:focus-within { border-color: var(--purple); }
+.users-search-wrap svg { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; }
+.users-search-wrap input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+}
+.users-search-wrap input::placeholder { color: var(--text-muted); }
+
+.users-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: rgba(255,255,255,.04);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.filter-btn:hover   { border-color: var(--cyan); color: var(--cyan); }
+.filter-btn.active  { background: var(--purple); border-color: var(--purple); color: #fff; }
+
+.users-view-toggle  { display: flex; gap: 4px; }
+.view-btn {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+  cursor: pointer;
+  background: rgba(255,255,255,.04);
+}
+.view-btn.active { border-color: var(--purple); color: var(--purple); background: rgba(124,58,237,.12); }
+
+/* ── Cards Grid ────────────────────────────────────────────────── */
+.users-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+/* ── User Card ─────────────────────────────────────────────────── */
+.user-card {
+  padding: 20px;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.user-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.user-card.status-active::before   { background: var(--green); }
+.user-card.status-disabled::before { background: var(--red); }
+.user-card.status-expired::before  { background: var(--orange); }
+.user-card.status-inactive::before { background: var(--text-muted); }
+
+.user-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  border-color: var(--border-hover);
+}
+
+/* Card Header */
+.uc-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 8px;
+}
+.uc-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+.user-card.status-active   .uc-avatar { background: rgba(16,185,129,.15); color: var(--green); }
+.user-card.status-disabled .uc-avatar { background: rgba(239,68,68,.12);  color: var(--red); }
+.user-card.status-expired  .uc-avatar { background: rgba(249,115,22,.12); color: var(--orange); }
+.user-card.status-inactive .uc-avatar { background: rgba(255,255,255,.06); color: var(--text-muted); }
+
+.uc-title { flex: 1; overflow: hidden; }
+.uc-customer {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.uc-username {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Status badge */
+.uc-status {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.7rem; font-weight: 700;
+  font-family: var(--font-main);
+  white-space: nowrap;
+}
+.uc-status::before {
+  content: ''; width: 6px; height: 6px;
+  border-radius: 50%; background: currentColor;
+}
+.uc-status.s-active   { background: rgba(16,185,129,.15);  color: var(--green); }
+.uc-status.s-disabled { background: rgba(239,68,68,.1);    color: var(--red); }
+.uc-status.s-expired  { background: rgba(249,115,22,.12);  color: var(--orange); }
+.uc-status.s-inactive { background: rgba(255,255,255,.06); color: var(--text-muted); }
+
+/* Card Info Grid */
+.uc-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.uc-info-item { display: flex; flex-direction: column; gap: 2px; }
+.uc-info-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }
+.uc-info-val   { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); font-family: var(--font-mono); }
+
+/* Data Usage Progress */
+.uc-usage-section { margin-bottom: 12px; }
+.uc-usage-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 5px;
+  font-size: 0.72rem;
+}
+.uc-usage-label { color: var(--text-muted); }
+.uc-usage-pct   { font-family: var(--font-mono); color: var(--text-secondary); font-weight: 600; }
+
+.uc-progress {
+  height: 6px;
+  background: rgba(255,255,255,.06);
+  border-radius: 100px;
+  overflow: hidden;
+}
+.uc-progress-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width .8s cubic-bezier(.4,0,.2,1);
+}
+.uc-progress-fill.low    { background: linear-gradient(90deg, var(--green), #34d399); }
+.uc-progress-fill.medium { background: linear-gradient(90deg, var(--yellow), #fde68a); }
+.uc-progress-fill.high   { background: linear-gradient(90deg, var(--red), #fca5a5); }
+
+/* Card Footer */
+.uc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+.uc-price {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+.uc-days-left {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.days-ok      { color: var(--green); }
+.days-warning { color: var(--yellow); }
+.days-danger  { color: var(--red); }
+.days-none    { color: var(--text-muted); }
+
+/* ── Users Table (table view) ──────────────────────────────────── */
+.users-table th { white-space: nowrap; }
+.users-table td { white-space: nowrap; }
+
+/* ── Expiry countdown chip ─────────────────────────────────────── */
+.days-chip {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.days-chip.ok      { background: rgba(16,185,129,.12); color: var(--green); }
+.days-chip.warning { background: rgba(251,191,36,.12); color: var(--yellow); }
+.days-chip.danger  { background: rgba(239,68,68,.1);   color: var(--red); }
+.days-chip.none    { background: rgba(255,255,255,.06); color: var(--text-muted); }
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .users-stats-row { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .users-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .users-cards-grid { grid-template-columns: 1fr; }
+  .users-toolbar { flex-direction: column; align-items: stretch; }
+}
+@media (max-width: 480px) {
+  .users-stats-row { grid-template-columns: 1fr 1fr; }
+  .ustat-value { font-size: 1.2rem; }
+}

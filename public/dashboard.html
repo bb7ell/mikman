@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="لوحة تحكم MikroTik — مراقبة الراوتر في الوقت الفعلي" />
+  <title>MikroTik Dashboard — لوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/users.css" />
+  <link rel="stylesheet" href="css/userManager.css" />
+  <link rel="stylesheet" href="css/usermanAdd.css" />
+  <link rel="stylesheet" href="css/hotspotActive.css" />
+</head>
+
+<body class="dashboard-body">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <svg class="brand-icon-sm" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="18" stroke="url(#gs)" stroke-width="1.5" />
+        <path d="M10 20 Q15 12 20 20 Q25 28 30 20" stroke="url(#gs)" stroke-width="2" stroke-linecap="round"
+          fill="none" />
+        <circle cx="10" cy="20" r="2.5" fill="#00d4ff" />
+        <circle cx="20" cy="20" r="2.5" fill="#7c3aed" />
+        <circle cx="30" cy="20" r="2.5" fill="#00d4ff" />
+        <defs>
+          <linearGradient id="gs" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#00d4ff" />
+            <stop offset="100%" stop-color="#7c3aed" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>MikroTik</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#overview" class="nav-item active" id="nav-overview">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+        <span>نظرة عامة</span>
+      </a>
+      <a href="#interfaces" class="nav-item" id="nav-interfaces">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0" />
+          <circle cx="12" cy="20" r="1" fill="currentColor" />
+        </svg>
+        <span>الواجهات</span>
+      </a>
+      <a href="#users" class="nav-item" id="nav-users">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+        <span>المستخدمون</span>
+        <span class="nav-badge" id="userCountBadge">0</span>
+      </a>
+      <a href="#userman" class="nav-item" id="nav-userman">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+        <span>يوزر مانجر</span>
+        <span class="nav-badge" id="umCountBadge">0</span>
+      </a>
+      <a href="#active-users" class="nav-item" id="nav-active-users">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+        <span>النشطون</span>
+        <span class="nav-badge" id="activeCountBadge">0</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="router-badge">
+        <div class="router-status-dot" id="connDot"></div>
+        <div class="router-info">
+          <span class="router-host" id="sidebarHost">--</span>
+          <span class="router-user" id="sidebarUser">--</span>
+        </div>
+      </div>
+      <button id="logoutBtn" class="btn-logout" title="قطع الاتصال">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+          <polyline points="16 17 21 12 16 7" />
+          <line x1="21" y1="12" x2="9" y2="12" />
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ── Main Content ─────────────────────────────────────────────────────────── -->
+  <div class="main-wrapper">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="تبديل القائمة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+      <div class="topbar-title">
+        <h2 id="pageTitle">نظرة عامة</h2>
+      </div>
+      <div class="topbar-actions">
+        <div class="uptime-badge" id="uptimeBadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span id="uptimeValue">--</span>
+        </div>
+        <button class="btn-refresh" id="refreshBtn" title="تحديث البيانات">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10" />
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── OVERVIEW SECTION (REDESIGNED) ────────────────────────────────────── -->
+    <section id="overview" class="dashboard-section active">
+      <div class="section-header-actions" style="margin-bottom: 24px; display: flex; justify-content: flex-end; gap: 12px; flex-wrap: wrap;">
+        <button class="btn-primary btn-add-hs" id="btnAddHotspot" style="padding: 10px 18px; font-size: 0.9rem; height: auto; border-radius: 8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; margin-left: 6px;">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <line x1="19" y1="8" x2="19" y2="14" />
+            <line x1="16" y1="11" x2="22" y2="11" />
+          </svg>
+          إضافة هوتسبوت
+        </button>
+
+        <button class="btn-primary btn-add-um" id="btnGoToAddUserman" style="padding: 10px 18px; font-size: 0.9rem; height: auto; border-radius: 8px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px; margin-left: 6px;">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          إضافة يوزر مانجر
+        </button>
+      </div>
+
+      <div class="overview-layout">
+        <!-- 1. System Info (Spans Full Width on Top) -->
+        <div class="dash-card info-card premium-glass-card layout-sysinfo">
+          <div class="card-head">
+            <span class="card-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </span>
+            <h3>معلومات النظام</h3>
+            <span class="card-live-dot"></span>
+          </div>
+          <div class="info-grid">
+            <div class="info-item"><span class="info-label">الجهاز</span><span class="info-value mono" id="boardName">--</span></div>
+            <div class="info-item"><span class="info-label">الإصدار</span><span class="info-value mono" id="version">--</span></div>
+            <div class="info-item"><span class="info-label">المعالج</span><span class="info-value mono" id="cpu">--</span></div>
+            <div class="info-item"><span class="info-label">عدد النوى</span><span class="info-value mono" id="cpuCount">--</span></div>
+          </div>
+        </div>
+
+        <!-- 2. Core Resources: CPU, RAM, HDD -->
+        <div class="core-resources-row layout-cores">
+          <!-- CPU Load Card -->
+          <div class="dash-card metric-card premium-glass-card">
+            <div class="card-head">
+              <span class="card-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></span>
+              <h3>حمل المعالج</h3>
+            </div>
+            <div class="gauge-wrapper">
+              <svg class="gauge" viewBox="0 0 120 120">
+                <circle class="gauge-bg" cx="60" cy="60" r="50" />
+                <circle class="gauge-fill" id="cpuGaugeFill" cx="60" cy="60" r="50" stroke-dasharray="314" stroke-dashoffset="314" transform="rotate(-90 60 60)" />
+                <text class="gauge-text" x="60" y="58" text-anchor="middle" id="cpuLoadText">0%</text>
+                <text class="gauge-label" x="60" y="74" text-anchor="middle">CPU</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Memory Card -->
+          <div class="dash-card res-card premium-glass-card">
+            <div class="card-head">
+              <span class="card-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 17v5M7 17H5a2 2 0 0 1-2-2v-2m18 0v2a2 2 0 0 1-2 2h-2M17 3h2a2 2 0 0 1 2 2v2M3 9V5a2 2 0 0 1 2-2h2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg></span>
+              <h3>الذاكرة RAM</h3>
+              <span class="pct-badge" id="memPct">0%</span>
+            </div>
+            <div class="res-bar">
+              <div class="res-bar-fill purple" id="memBarFill" style="width:0%"></div>
+            </div>
+            <div class="res-details">
+              <div class="res-detail-item"><span>مستخدم</span><span class="mono" id="memUsed">--</span></div>
+              <div class="res-detail-item"><span>متاح</span><span class="mono" id="memFree">--</span></div>
+              <div class="res-detail-item"><span>الكل</span><span class="mono" id="memTotal">--</span></div>
+            </div>
+          </div>
+
+          <!-- HDD Card -->
+          <div class="dash-card res-card premium-glass-card">
+            <div class="card-head">
+              <span class="card-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+              <h3>التخزين HDD</h3>
+              <span class="pct-badge" id="hddPct">0%</span>
+            </div>
+            <div class="res-bar">
+              <div class="res-bar-fill cyan" id="hddBarFill" style="width:0%"></div>
+            </div>
+            <div class="res-details">
+              <div class="res-detail-item"><span>مستخدم</span><span class="mono" id="hddUsed">--</span></div>
+              <div class="res-detail-item"><span>متاح</span><span class="mono" id="hddFree">--</span></div>
+              <div class="res-detail-item"><span>الكل</span><span class="mono" id="hddTotal">--</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Health & Environment (Row 3) -->
+        <div class="health-environment-row layout-health">
+          <!-- Main Health Cards Grid -->
+          <div class="dash-card premium-glass-card health-main-card">
+             <div class="card-head">
+              <span class="card-icon orange">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </span>
+              <h3>صحة الجهاز والبيئة</h3>
+              <span class="card-live-dot"></span>
+            </div>
+            <div class="health-cards-grid" id="healthCardsGrid">
+              <!-- Injected by JS, we will style them with premium UX in CSS -->
+            </div>
+          </div>
+          
+          <!-- Temperature Widget -->
+          <div class="dash-card metric-card premium-glass-card temp-widget">
+            <div class="card-head">
+              <span class="card-icon red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" /></svg></span>
+              <h3>مؤشر الحرارة</h3>
+            </div>
+            <div class="temp-display">
+              <div class="temp-value" id="tempValue">--</div>
+              <div class="temp-bar-wrap">
+                <div class="temp-bar-fill" id="tempBarFill" style="width:0%"></div>
+              </div>
+              <div class="temp-labels"><span>0°C</span><span>100°C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Detailed Data Table (Row 4) -->
+        <div class="dash-card premium-glass-card layout-table">
+          <div class="card-head">
+            <span class="card-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+            </span>
+            <h3>التفاصيل الفنية</h3>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table" id="resourcesTable">
+              <thead><tr><th>المعامل</th><th>القيمة</th></tr></thead>
+              <tbody id="resourcesTableBody">
+                <tr><td colspan="2" class="table-loading">جارٍ التحميل...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hotspot Add Modal (Premium Redesign) -->
+      <div id="hotspotModal" class="modal-overlay" style="display:none">
+        <div class="modal-content hotspot-form-modal">
+          <div class="modal-header">
+            <h3>✨ إضافة مستخدم هوتسبوت جديد</h3>
+            <button class="modal-close" id="closeHotspotModal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="hotspot-form-grid">
+              <div class="hs-group">
+                <label>اسم المستخدم</label>
+                <input type="text" id="hsName" placeholder="user123" required />
+              </div>
+              <div class="hs-group">
+                <label>كلمة المرور</label>
+                <input type="text" id="hsPass" placeholder="اختياري..." />
+              </div>
+
+              <div class="hs-group">
+                <label>الباقة</label>
+                <select id="hsProfile">
+                  <option value="">Loading...</option>
+                </select>
+              </div>
+              <div class="hs-group">
+                <label>السعر</label>
+                <input type="number" id="hsPrice" placeholder="5000" />
+              </div>
+
+              <div class="hs-group">
+                <label>حجم البيانات</label>
+                <div class="hs-unit-box">
+                  <input type="number" id="hsData" placeholder="10" />
+                  <select id="hsDataUnit">
+                    <option value="MB">MB</option>
+                    <option value="GB" selected>GB</option>
+                  </select>
+                </div>
+              </div>
+              <div class="hs-group">
+                <label>الصلاحية</label>
+                <div class="hs-unit-box">
+                  <input type="number" id="hsValidity" placeholder="30" />
+                  <select id="hsValidityUnit">
+                    <option value="days">يوم</option>
+                    <option value="hours">ساعة</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="hs-group full">
+                <label>ملاحظات</label>
+                <input type="text" id="hsNote" placeholder="ملاحظة..." />
+              </div>
+              <div class="hs-group full">
+                <label>نقطة البيع</label>
+                <select id="hsPos">
+                  <option value="">الرئيسية</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="hs-footer">
+              <button class="btn-hs-cancel" id="cancelHotspotBtn">إلغاء</button>
+              <button class="btn-hs-submit" id="submitHotspotBtn">حفظ المستخدم</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTERFACES SECTION ────────────────────────────────────────────────── -->
+    <section id="interfaces" class="dashboard-section">
+      <div class="dash-card glass-card">
+        <div class="card-head">
+          <span class="card-icon cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0" />
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+              <circle cx="12" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </span>
+          <h3>واجهات الشبكة</h3>
+          <div class="iface-counts">
+            <span class="count-chip active-chip">متصل: <b id="ifaceActiveCount">0</b></span>
+            <span class="count-chip total-chip">الكل: <b id="ifaceTotalCount">0</b></span>
+          </div>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table iface-table" id="ifacesTable">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>النوع</th>
+                <th>الحالة</th>
+                <th>MAC</th>
+                <th>أرسل</th>
+                <th>استقبل</th>
+              </tr>
+            </thead>
+            <tbody id="ifacesTableBody">
+              <tr>
+                <td colspan="6" class="table-loading">جارٍ التحميل...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HOTSPOT USERS SECTION ────────────────────────────────────────────── -->
+    <section id="users" class="dashboard-section">
+
+      <!-- Summary Stats Row -->
+      <div class="users-stats-row" id="usersStatsRow">
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(0,212,255,.12);color:#00d4ff">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">إجمالي المستخدمين</div>
+            <div class="ustat-value" id="uTotalCount">--</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(16,185,129,.12);color:#10b981">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">نشط</div>
+            <div class="ustat-value" id="uActiveCount">--</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(239,68,68,.12);color:#ef4444">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">معطّل</div>
+            <div class="ustat-value" id="uDisabledCount">--</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(249,115,22,.12);color:#f97316">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">منتهي الصلاحية</div>
+            <div class="ustat-value" id="uExpiredCount">--</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(251,191,36,.12);color:#fbbf24">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">إجمالي الإيرادات</div>
+            <div class="ustat-value" id="uTotalRevenue">--</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter Bar -->
+      <div class="users-toolbar glass-card">
+        <div class="users-search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input type="text" id="usersSearch" placeholder="ابحث بالاسم أو رقم المشترك..." />
+        </div>
+        <div class="users-filters">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="active">نشط</button>
+          <button class="filter-btn" data-filter="disabled">معطّل</button>
+          <button class="filter-btn" data-filter="expired">منتهي</button>
+          <button class="filter-btn" data-filter="inactive">غير مستخدم</button>
+        </div>
+        <div class="users-view-toggle">
+          <button class="view-btn active" id="viewCards" title="عرض البطاقات">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+            </svg>
+          </button>
+          <button class="view-btn" id="viewTable" title="عرض الجدول">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cards View -->
+      <div id="usersCardsView" class="users-cards-grid">
+        <div class="table-loading" style="grid-column:1/-1;text-align:center;padding:48px">جارٍ التحميل...</div>
+      </div>
+
+      <!-- Table View (hidden by default) -->
+      <div id="usersTableView" class="dash-card glass-card" style="display:none">
+        <div class="data-table-wrap">
+          <table class="data-table users-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>المشترك</th>
+                <th>اسم المستخدم</th>
+                <th>الباقة</th>
+                <th>الحالة</th>
+                <th>تاريخ البدء</th>
+                <th>تاريخ الانتهاء</th>
+                <th>الأيام المتبقية</th>
+                <th>استهلاك البيانات</th>
+                <th>السعر</th>
+              </tr>
+            </thead>
+            <tbody id="usersTableBody">
+              <tr>
+                <td colspan="10" class="table-loading">جارٍ التحميل...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── USER MANAGER SECTION ─────────────────────────────────────────── -->
+    <section id="userman" class="dashboard-section">
+
+      <!-- UM Summary Stats -->
+      <div class="users-stats-row" id="umStatsRow" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(124, 58, 237, 0.12);color:var(--purple)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">إجمالي المشتركين</div>
+            <div class="ustat-value" id="umTotalCount">0</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(16, 185, 129, 0.12);color:var(--green)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">بطاقات تعمل</div>
+            <div class="ustat-value" id="umUsedCount">0</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(0, 212, 255, 0.12);color:var(--cyan)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">بطاقات جديدة</div>
+            <div class="ustat-value" id="umNewCount">0</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(239,68,68,0.12);color:var(--red)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">معطّل</div>
+            <div class="ustat-value" id="umDisabledCount">0</div>
+          </div>
+        </div>
+        <div class="ustat-card glass-card">
+          <div class="ustat-icon" style="background:rgba(249, 115, 22, 0.12);color:var(--orange)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+          </div>
+          <div>
+            <div class="ustat-label">المنتهية</div>
+            <div class="ustat-value" id="umExpiredCount">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UM Toolbar -->
+      <div class="users-toolbar glass-card" id="umToolbar">
+        <div class="users-search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input type="text" id="umSearchInput" placeholder="ابحث باسم المستخدم..." />
+        </div>
+        <div class="users-filters">
+          <button class="filter-btn active" data-filter="all">الكل</button>
+          <button class="filter-btn" data-filter="working">بطاقات تعمل</button>
+          <button class="filter-btn" data-filter="new">بطاقات جديدة</button>
+          <button class="filter-btn" data-filter="disabled">معطّل</button>
+          <button class="filter-btn" data-filter="expired">المنتهية</button>
+        </div>
+        <div class="users-view-toggle">
+          <button class="view-btn" id="umManagePos" title="إدارة نقاط البيع">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </button>
+          <button class="view-btn active" id="umViewCards" title="عرض البطاقات">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7" />
+              <rect x="14" y="3" width="7" height="7" />
+              <rect x="3" y="14" width="7" height="7" />
+              <rect x="14" y="14" width="7" height="7" />
+            </svg>
+          </button>
+          <button class="view-btn" id="umViewTable" title="عرض الجدول">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- POS Management Modal -->
+      <div id="posModal" class="modal-overlay" style="display:none">
+        <div class="modal-content glass-card">
+          <div class="modal-header">
+            <h3>إدارة نقاط البيع</h3>
+            <button class="modal-close" id="closePosModal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-desc">اربط رقم الموقع (Location) باسم نقطة البيع لسهولة التتبع.</p>
+            <div class="pos-form">
+              <input type="number" id="posLocationInput" placeholder="رقم الموقع (مثلاً: 2)" />
+              <input type="text" id="posNameInput" placeholder="اسم نقطة البيع" />
+              <button class="btn-add" id="addPosBtn">إضافة/تحديث</button>
+            </div>
+            <div class="pos-list-wrap">
+              <table class="pos-table">
+                <thead>
+                  <tr>
+                    <th>الرقم</th>
+                    <th>الاسم</th>
+                    <th>إجراء</th>
+                  </tr>
+                </thead>
+                <tbody id="posTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UM Cards View -->
+      <div id="umCardsView" class="users-cards-grid">
+        <div class="table-loading" style="grid-column:1/-1;text-align:center;padding:48px">جارٍ التحميل...</div>
+      </div>
+
+      <!-- UM Table View (hidden by default) -->
+      <div id="umTableView" class="dash-card glass-card" style="display:none">
+        <div class="data-table-wrap">
+          <table class="data-table users-table" id="umTable">
+            <thead>
+              <tr>
+                <th>المشترك</th>
+                <th>الباقة</th>
+                <th>المالك</th>
+                <th>النشاط</th>
+                <th>آخر ظهور</th>
+                <th>الحالة</th>
+                <th>التعليق</th>
+              </tr>
+            </thead>
+            <tbody id="umTableBody">
+              <tr>
+                <td colspan="7" class="table-loading">جارٍ التحميل...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pagination Controls -->
+      <div class="pagination-footer glass-card">
+        <div class="page-info">عرض <span id="umRangeStart">0</span> - <span id="umRangeEnd">0</span> من <span
+            id="umTotalDisplay">0</span></div>
+        <div class="pagination-btns">
+          <button id="umPrevBtn" class="page-btn" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="9 18 15 12 9 6" />
+            </svg> السابق</button>
+          <span class="current-page">صفحة <b id="umCurrentPage">1</b> من <b id="umTotalPages">1</b></span>
+          <button id="umNextBtn" class="page-btn">التالي <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <polyline points="15 18 9 12 15 6" />
+            </svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ADD USER MANAGER SECTION ───────────────────────────────────── -->
+    <section id="userman-add" class="dashboard-section">
+      <div class="dash-card glass-card" style="max-width: 900px; margin: 0 auto;">
+        <div class="card-head">
+          <span class="card-icon purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+          </span>
+          <h3>إضافة مستخدم يوزر مانجر جديد</h3>
+        </div>
+
+        <!-- Custom Tabs -->
+        <div class="userman-tabs"
+          style="display:flex; gap:10px; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom:10px; overflow-x:auto; scrollbar-width:none;">
+          <button type="button" class="u-tab active" data-tab="single"
+            style="white-space:nowrap; padding:10px 20px; background:rgba(124, 58, 237, 0.15); border:1px solid var(--purple); color:var(--purple); border-radius:8px; cursor:pointer;">مستخدم
+            واحد</button>
+          <button type="button" class="u-tab" data-tab="bulk"
+            style="white-space:nowrap; padding:10px 20px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); border-radius:8px; cursor:pointer;">استيراد
+            جماعي</button>
+          <button type="button" class="u-tab" data-tab="random"
+            style="white-space:nowrap; padding:10px 20px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); border-radius:8px; cursor:pointer;">بطاقات
+            عشوائية</button>
+          <button type="button" class="u-tab" data-tab="printing"
+            style="white-space:nowrap; padding:10px 20px; background:transparent; border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); border-radius:8px; cursor:pointer;">طباعة
+            الكروت</button>
+        </div>
+
+        <form id="formAddUserman" class="userman-form-grid" novalidate>
+          <!-- Tab 1: Single User -->
+          <div class="u-tab-content active" id="tab-single">
+            <div class="form-row" style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+              <div class="hs-group" style="margin-bottom:15px;">
+                <label style="display:block; margin-bottom:5px; font-size:0.9rem;">اسم المستخدم <span
+                    style="color:var(--red)">*</span></label>
+                <input type="text" id="umName" name="username" placeholder="مثلاً: user101"
+                  style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+              </div>
+              <div class="hs-group" style="margin-bottom:15px;">
+                <label style="display:block; margin-bottom:5px; font-size:0.9rem;">كلمة المرور (اختياري)</label>
+                <input type="text" id="umPass" name="password" placeholder="اتركه فارغاً للعشوائي"
+                  style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Bulk Import -->
+          <div class="u-tab-content" id="tab-bulk" style="display:none; margin-bottom: 20px;">
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-bottom:20px;">
+              <!-- File Upload Card -->
+              <button type="button" id="btnUploadFile" class="bulk-action-card" style="border:1px dashed var(--purple); background:rgba(124, 58, 237, 0.05); border-radius:12px; padding:15px; display:flex; align-items:center; gap:15px; cursor:pointer; width:100%; transition:all 0.3s;">
+                <div style="width:45px; height:45px; background:rgba(124, 58, 237, 0.1); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--purple); pointer-events:none;">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" />
+                  </svg>
+                </div>
+                <div style="text-align:right; pointer-events:none;">
+                  <div style="font-weight:600; color:white; font-size:0.95rem;">استيراد من ملف</div>
+                  <div style="font-size:0.75rem; color:var(--text-muted);">يدعم ملفات TXT و CSV</div>
+                </div>
+              </button>
+              <input type="file" id="umFilePicker" style="position:absolute; opacity:0; width:0; height:0; pointer-events:none;" accept=".txt,.csv" />
+
+              <!-- Password Options Grid -->
+              <div style="display:flex; gap:10px;">
+                <div class="radio-card">
+                  <input type="radio" id="pass-opt-empty" name="umBulkPassOption" value="empty" checked style="display:none;" />
+                  <label for="pass-opt-empty" class="radio-card-content">
+                    <div class="radio-icon"></div>
+                    <div>
+                      <div class="radio-title">بدون</div>
+                      <div class="radio-desc">كلمة سر فارغة</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" id="pass-opt-same" name="umBulkPassOption" value="same" style="display:none;" />
+                  <label for="pass-opt-same" class="radio-card-content">
+                    <div class="radio-icon"></div>
+                    <div>
+                      <div class="radio-title">متطابق</div>
+                      <div class="radio-desc">نفس الاسم</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" id="pass-opt-rand" name="umBulkPassOption" value="random" style="display:none;" />
+                  <label for="pass-opt-rand" class="radio-card-content">
+                    <div class="radio-icon"></div>
+                    <div>
+                      <div class="radio-title">عشوائي</div>
+                      <div class="radio-desc">6 أرقام/حروف</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="hs-group" style="position:relative;">
+              <label style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <span style="font-weight:600; color:var(--purple);">قائمة أسماء المستخدمين (واحد في كل سطر)</span>
+                <span id="bulkLineCount"
+                  style="font-size:0.75rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:2px 8px; border-radius:4px;">0
+                  أسطر</span>
+              </label>
+              <textarea id="umBulkNames" placeholder="الصق الأسماء هنا...&#10;user1&#10;user2&#10;user3..."
+                style="width:100%; min-height:220px; padding:15px; background:rgba(0,0,0,0.3); border:1px solid rgba(124, 58, 237, 0.2); border-radius:12px; color:white; font-family:'JetBrains Mono', monospace; line-height:1.6; resize: vertical;"></textarea>
+
+              <!-- Real-time Stats Overlay -->
+              <div id="bulkStatsArea"
+                style="margin-top:15px; display:grid; grid-template-columns: repeat(4, 1fr); gap:10px;">
+                <div class="stat-mini-card">
+                  <span class="stat-label">الإجمالي</span>
+                  <span class="stat-value" id="statTotal">0</span>
+                </div>
+                <div class="stat-mini-card">
+                  <span class="stat-label">فريد</span>
+                  <span class="stat-value" id="statUnique">0</span>
+                </div>
+                <div class="stat-mini-card">
+                  <span class="stat-label">مكرر</span>
+                  <span class="stat-value" id="statDupes" style="color:var(--orange)">0</span>
+                </div>
+                <div class="stat-mini-card">
+                  <span class="stat-label">الطول</span>
+                  <span class="stat-value" id="statLengthRange">--</span>
+                </div>
+              </div>
+
+              <!-- Visual Distribution -->
+              <div id="bulkStatsVisual" style="margin-top:15px; display:none;">
+                <div
+                  style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px; display:flex; justify-content:space-between;">
+                  <span>توزيع أطوال الأسماء</span>
+                  <span id="statAlert" style="color:var(--red); display:none;">⚠️ تباين كبير في الأطوال</span>
+                </div>
+                <div id="lenDistribution"
+                  style="height:30px; display:flex; align-items:flex-end; gap:2px; background:rgba(255,255,255,0.02); padding:2px; border-radius:4px;">
+                </div>
+              </div>
+
+              <!-- Empty State -->
+              <div id="bulkStatsEmpty"
+                style="margin-top:15px; padding:20px; text-align:center; border:1px dashed rgba(255,255,255,0.05); border-radius:12px; color:var(--text-muted); font-size:0.85rem;">
+                ابدأ بكتابة أو لصق الأسماء لرؤية التحليل المتقدم
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Random Cards -->
+          <div class="u-tab-content" id="tab-random" style="display:none; margin-bottom: 20px;">
+            <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:15px; margin-bottom:20px;">
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">عدد المستخدمين</label>
+                <input type="number" id="umRandCount" value="10" min="1" max="1000"
+                  style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; font-weight:600;" />
+              </div>
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">طول اسم المستخدم</label>
+                <input type="number" id="umRandLen" value="6" min="3" max="20"
+                  style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; font-weight:600;" />
+              </div>
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">نوع الكود</label>
+                <select id="umRandType"
+                  style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white; cursor:pointer;">
+                  <option value="numbers" selected>أرقام فقط (0-9)</option>
+                  <option value="letters">حروف فقط (a-z)</option>
+                  <option value="mixed">حروف وأرقام (a-z0-9)</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:25px;">
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">بادئة (Prefix)</label>
+                <input type="text" id="umRandPrefix" placeholder="مثلاً: VIP-"
+                  style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white;" />
+              </div>
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.85rem; color:var(--text-muted);">لاحقة (Suffix)</label>
+                <input type="text" id="umRandSuffix" placeholder="مثلاً: -X"
+                  style="width:100%; padding:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:white;" />
+              </div>
+            </div>
+
+            <div class="hs-group">
+              <label style="display:block; margin-bottom:12px; font-size:0.85rem; color:var(--text-muted);">تنسيق كلمة المرور</label>
+              <div style="display:flex; gap:10px;">
+                <div class="radio-card">
+                  <input type="radio" id="rand-pass-empty" name="umRandPassOption" value="empty" checked style="display:none;" />
+                  <label for="rand-pass-empty" class="radio-card-content">
+                    <div class="radio-icon"></div>
+                    <div>
+                      <div class="radio-title">بدون</div>
+                      <div class="radio-desc">فارغة</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" id="rand-pass-same" name="umRandPassOption" value="same" style="display:none;" />
+                  <label for="rand-pass-same" class="radio-card-content">
+                    <div class="radio-icon"></div>
+                    <div>
+                      <div class="radio-title">متطابق</div>
+                      <div class="radio-desc">نفس الكود</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="radio-card">
+                  <input type="radio" id="rand-pass-rand" name="umRandPassOption" value="random" style="display:none;" />
+                  <label for="rand-pass-rand" class="radio-card-content">
+                    <div class="radio-icon"></div>
+                    <div>
+                      <div class="radio-title">عشوائي</div>
+                      <div class="radio-desc">6 أرقام</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Printing (Placeholder) -->
+          <div class="u-tab-content" id="tab-printing" style="display:none; margin-bottom: 20px;">
+            <div
+              style="padding:40px; text-align:center; background:rgba(0,0,0,0.2); border:2px dashed rgba(255,255,255,0.1); border-radius:15px;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--cyan)" stroke-width="1.5"
+                style="margin-bottom:15px;">
+                <polyline points="6 9 6 2 18 2 18 9" />
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                <rect x="6" y="14" width="12" height="8" />
+              </svg>
+              <h4 style="margin-bottom:10px; color:white;">نظام طباعة الكروت المتقدم</h4>
+              <p style="color:var(--text-muted); font-size:0.9rem;">يمكنك رفع تصميم الكرت الخاص بك وتحديد مواقع النصوص
+                لطباعتها تلقائياً.</p>
+              <button type="button" class="btn-hs-secondary"
+                style="margin-top:20px; padding:10px 25px; border-radius:8px; cursor:not-allowed; opacity:0.6;">قريباً
+                في التحديث القادم...</button>
+            </div>
+          </div>
+
+          <!-- Shared Settings Area -->
+          <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:20px;">
+            <div class="form-row" style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+              <!-- الإعدادات -->
+              <div class="form-col">
+                <div class="form-group-title"
+                  style="margin-bottom:15px; color:var(--purple); font-weight:600; border-right:3px solid var(--purple); padding-right:10px;">
+                  إعدادات الباقة والمالك</div>
+                <div class="hs-group" style="margin-bottom:15px;">
+                  <label style="display:block; margin-bottom:5px; font-size:0.9rem;">الباقة (Profile) <span
+                      style="color:var(--red)">*</span></label>
+                  <select id="umProfileSelect" name="profile" required
+                    style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;">
+                    <option value="">جاري التحميل...</option>
+                  </select>
+                </div>
+                <div class="hs-group" style="margin-bottom:15px;">
+                  <label style="display:block; margin-bottom:5px; font-size:0.9rem;">المالك (Customer) <span
+                      style="color:var(--red)">*</span></label>
+                  <select id="umCustomerSelect" name="customer" required
+                    style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;">
+                    <option value="admin">admin</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- الشخصية -->
+              <div class="form-col">
+                <div class="form-group-title"
+                  style="margin-bottom:15px; color:var(--cyan); font-weight:600; border-right:3px solid var(--cyan); padding-right:10px;">
+                  المعلومات الشخصية</div>
+                <div class="hs-group" style="margin-bottom:15px;">
+                  <label style="display:block; margin-bottom:5px; font-size:0.9rem;">الاسم الأول</label>
+                  <input type="text" id="umFirstName" name="firstName" placeholder="الاسم الأول"
+                    style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+                </div>
+                <div class="hs-group" style="margin-bottom:15px;">
+                  <label style="display:block; margin-bottom:5px; font-size:0.9rem;">الاسم الثاني</label>
+                  <input type="text" id="umLastName" name="lastName" placeholder="اللقب أو الاسم الأخير"
+                    style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+                </div>
+                <div class="hs-group" style="margin-bottom:15px;">
+                  <label style="display:block; margin-bottom:5px; font-size:0.9rem;">الايميل</label>
+                  <input type="email" id="umEmail" name="email" placeholder="example@mail.com"
+                    style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+                </div>
+                <div class="hs-group" style="margin-bottom:15px;">
+                  <label style="display:block; margin-bottom:5px; font-size:0.9rem;">رقم الهاتف</label>
+                  <input type="text" id="umPhone" name="phone" placeholder="77xxxxxxx"
+                    style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+                </div>
+              </div>
+            </div>
+
+            <!-- إضافية -->
+            <div class="form-group-title"
+              style="margin:20px 0 15px; color:var(--orange); font-weight:600; border-right:3px solid var(--orange); padding-right:10px;">
+              تفاصيل إضافية</div>
+            <div class="form-row" style="display:grid; grid-template-columns: 1fr 2fr; gap:20px;">
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.9rem;">الموقع (Location / نقاط
+                  البيع)</label>
+                <select id="umLocationSelect" name="location"
+                  style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;">
+                  <option value="">نقطة افتراضية</option>
+                </select>
+              </div>
+              <div class="hs-group">
+                <label style="display:block; margin-bottom:5px; font-size:0.9rem;">ملاحظات</label>
+                <input type="text" id="umComment" name="comment" placeholder="اكتب ملاحظاتك هنا..."
+                  style="width:100%; padding:10px; background:rgba(0,0,0,0.2); border:1px solid rgba(255,255,255,0.1); border-radius:6px; color:white;" />
+              </div>
+            </div>
+
+            <div class="form-actions" style="margin-top:30px; display:flex; justify-content: flex-end; gap:15px;">
+              <button type="button" class="btn-hs-cancel" id="btnCancelUserman"
+                style="padding:12px 30px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; border-radius:8px; cursor:pointer;">إلغاء</button>
+              <button type="submit" class="btn-hs-submit" id="btnSubmitUserman"
+                style="padding:12px 30px; background:linear-gradient(135deg, var(--purple), #a855f7); border:none; color:white; border-radius:8px; font-weight:600; cursor:pointer; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);">إضافة
+                المستخدم والبدء</button>
+            </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ── HOTSPOT ACTIVE SECTION ──────────────────────────────────────────────── -->
+    <section id="hotspot-active" class="dashboard-section">
+    <div class="section-header-actions" style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap:15px;">
+      <div style="display:flex; flex-direction:column; gap:5px;">
+        <h2 style="margin:0; color:white; font-size:1.8rem; letter-spacing:-0.5px;">المستخدمون النشطون</h2>
+        <div style="display:flex; align-items:center; gap:8px;">
+           <span class="status-indicator indicator-active" style="width:10px; height:10px;"></span>
+           <p style="margin:0; color:var(--text-muted); font-size:0.9rem;">يتم عرض <span id="activeCountDisplay" style="color:var(--cyan); font-weight:600;">0</span> جلسة متصلة الآن</p>
+        </div>
+      </div>
+      
+      <div style="display:flex; gap:12px; align-items:center;">
+        <div class="search-box-premium" style="position:relative;">
+          <input type="text" id="activeSearch" placeholder="ابحث باسم المستخدم، IP، أو الماك..." 
+            style="padding:12px 15px 12px 40px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white; width:300px; transition:all 0.3s;" />
+          <svg style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); pointer-events:none;" 
+            viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </div>
+        <button class="btn-refresh-premium" id="refreshActiveBtn" title="تحديث القائمة" 
+          style="padding:12px; background:rgba(124, 58, 237, 0.1); border:1px solid rgba(124, 58, 237, 0.2); border-radius:12px; color:var(--purple); cursor:pointer; transition:all 0.3s;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Cards Container -->
+    <div id="activeCardsGrid" class="active-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
+       <!-- Cards injected here -->
+    </div>
+
+    <!-- Loading State -->
+    <div id="activeLoading" style="display:none; padding:80px 20px; text-align:center;">
+       <div class="loader-spinner" style="width:40px; height:40px; border-width:3px; border-top-color:var(--purple); margin:0 auto;"></div>
+       <p style="margin-top:20px; color:var(--text-muted); font-size:1rem;">جاري مزامنة الجلسات النشطة من الراوتر...</p>
+    </div>
+
+    <!-- Empty/No Result State -->
+    <div id="activeEmpty" style="display:none; padding:120px 20px; text-align:center; background:rgba(255,255,255,0.02); border-radius:24px; border:1px dashed rgba(255,255,255,0.1);">
+      <div style="width:80px; height:80px; background:rgba(255,255,255,0.03); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 25px;">
+        <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--text-muted)" stroke-width="1.5" style="opacity:0.5;">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h3 style="color:white; font-weight:500; margin-bottom:10px;">لا يوجد مستخدمون نشطون حالياً</h3>
+      <p style="color:var(--text-muted); font-size:0.95rem;">عند اتصال أي مستخدم بالشبكة، ستظهر تفاصيله هنا فوراً.</p>
+    </div>
+  </section>
+
+  </div><!-- /main-wrapper -->
+
+  <!-- Global toast notification -->
+  <!-- Processing Overlay -->
+  <div id="umProcessingOverlay" class="modal-overlay"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10000; backdrop-filter:blur(8px); flex-direction:column; align-items:center; justify-content:center; color:white;">
+    <div style="width:90%; max-width:450px; text-align:center;">
+      <div class="processing-loader"
+        style="margin-bottom:30px; position:relative; width:120px; height:120px; margin: 0 auto 30px;">
+        <svg viewBox="0 0 100 100" style="width:100%; height:100%; transform:rotate(-90deg);">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8" />
+          <circle id="umProgressCircle" cx="50" cy="50" r="45" fill="none" stroke="var(--purple)" stroke-width="8"
+            stroke-dasharray="283" stroke-dashoffset="283"
+            style="transition: stroke-dashoffset 0.3s ease; stroke-linecap:round;" />
+        </svg>
+        <div id="umProgressPercent"
+          style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); font-size:1.5rem; font-weight:bold;">
+          0%</div>
+      </div>
+
+      <h3 id="umProcessTitle" style="margin-bottom:10px;"> ...</h3>
+      <p id="umProcessSubtitle" style="color:var(--text-muted); font-size:0.9rem; margin-bottom:30px;"> </p>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:30px;">
+        <div
+          style="padding:15px; background:rgba(34, 197, 94, 0.1); border:1px solid rgba(34, 197, 94, 0.2); border-radius:12px;">
+          <div style="font-size:0.8rem; color:rgba(34, 197, 94, 0.8); margin-bottom:5px;"></div>
+          <div id="umProcessSuccess" style="font-size:1.5rem; font-weight:bold; color:#22c55e;">0</div>
+        </div>
+        <div
+          style="padding:15px; background:rgba(239, 68, 68, 0.1); border:1px solid rgba(239, 68, 68, 0.2); border-radius:12px;">
+          <div style="font-size:0.8rem; color:rgba(239, 68, 68, 0.8); margin-bottom:5px;"></div>
+          <div id="umProcessFail" style="font-size:1.5rem; font-weight:bold; color:#ef4444;">0</div>
+        </div>
+      </div>
+
+      <div id="umCurrentTarget"
+        style="font-family:monospace; font-size:0.85rem; color:var(--purple); background:rgba(124, 58, 237, 0.1); padding:8px 15px; border-radius:20px; display:inline-block;">
+        جاري معالجة المستخدمين...
+      </div>
+    </div>
+  </div>
+  <!-- Results Modal -->
+  <div id="umResultsModal" class="modal-overlay"
+    style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:9999; backdrop-filter:blur(5px); align-items:center; justify-content:center;">
+    <div class="glass-card"
+      style="width:90%; max-width:700px; max-height:85vh; display:flex; flex-direction:column; padding:0; overflow:hidden; background:rgba(13,17,23,0.9); border:1px solid rgba(124, 58, 237, 0.3);">
+      <div
+        style="padding:20px; border-bottom:1px solid rgba(255,255,255,0.1); display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0; color:white; display:flex; align-items:center; gap:10px;">
+          <span style="color:var(--purple);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg></span>
+          نتائج معالجة المستخدمين
+        </h3>
+        <button type="button" id="closeResultsModal"
+          style="background:transparent; border:none; color:var(--text-muted); cursor:pointer;"><svg viewBox="0 0 24 24"
+            width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg></button>
+      </div>
+
+      <div style="padding:15px; background:rgba(0,0,0,0.2); display:flex; gap:10px; align-items:center;">
+        <div style="flex:1; position:relative;">
+          <input type="text" id="resSearch" placeholder="ابحث بالاسم أو رقم المشترك..."
+            style="width:100%; padding:10px 10px 10px 35px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:white; font-size:0.9rem;" />
+          <svg style="position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--text-muted);"
+            viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </div>
+        <div id="resSummary" style="font-size:0.85rem; color:var(--text-muted);">0 بطاقات / 0 الكل</div>
+      </div>
+
+      <div style="display:flex; border-bottom:1px solid rgba(255,255,255,0.05);">
+        <button type="button" class="res-tab active" data-res="success"
+          style="flex:1; padding:12px; background:transparent; border:none; border-bottom:2px solid var(--purple); color:var(--purple); cursor:pointer; font-weight:600;">تمت
+          الإضافة (<span id="countSuccess">0</span>)</button>
+        <button type="button" class="res-tab" data-res="fail"
+          style="flex:1; padding:12px; background:transparent; border:none; border-bottom:2px solid transparent; color:var(--text-muted); cursor:pointer; font-weight:600;">فشلت
+          الإضافة (<span id="countFail">0</span>)</button>
+      </div>
+
+      <div id="resListContainer" style="flex:1; overflow-y:auto; padding:15px; min-height:200px;">
+        <div style="text-align:center; padding:40px; color:var(--text-muted);">لا توجد نتائج لعرضها حالياً</div>
+      </div>
+
+      <div
+        style="padding:20px; border-top:1px solid rgba(255,255,255,0.1); display:flex; justify-content:flex-end; gap:15px;">
+        <button type="button" id="btnCopyResults" class="btn-hs-secondary"
+          style="padding:10px 20px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); color:white; background:transparent;">نسخ
+          النتائج</button>
+        <button type="button" id="btnFinishResults" class="btn-hs-submit"
+          style="padding:10px 25px; border-radius:8px; background:var(--purple); border:none; color:white; font-weight:600;">إنهاء
+          ومتابعة</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- Mass Action Confirmation Modal -->
+  <div id="massConfirmModal" class="modal-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:11000; backdrop-filter:blur(10px); align-items:center; justify-content:center;">
+    <div class="glass-card" style="width:90%; max-width:400px; padding:30px; text-align:center; border:1px solid rgba(124, 58, 237, 0.3);">
+      <div style="width:60px; height:60px; background:rgba(124, 58, 237, 0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px; color:var(--purple);">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
+      <h3 style="margin-bottom:10px; color:white;">تأكيد العملية الكبرى</h3>
+      <p id="massConfirmText" style="color:var(--text-muted); font-size:0.9rem; margin-bottom:25px;">هل أنت متأكد من إنشاء 0 مستخدم؟ هذه العملية قد تستغرق بعض الوقت.</p>
+      <div style="display:flex; gap:15px;">
+        <button type="button" id="btnMassCancel" class="btn-hs-secondary" style="flex:1; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); color:white; background:transparent; cursor:pointer;">إلغاء</button>
+        <button type="button" id="btnMassConfirm" class="btn-hs-submit" style="flex:1; padding:12px; border-radius:8px; background:var(--purple); border:none; color:white; font-weight:600; cursor:pointer;">تأكيد البدء</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/users.js"></script>
+  <script src="js/userManager.js"></script>
+  <script src="js/hotspotAdd.js"></script>
+  <script src="js/usermanAdd.js"></script>
+  <script src="js/hotspotActive.js"></script>
+</body>
+
+</html>

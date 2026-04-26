@@ -45,4 +45,37 @@ router.get('/status', (req, res) => {
   });
 });
 
+const db = require('../db');
+
+// GET /api/auth/saved-routers
+router.get('/saved-routers', (req, res) => {
+  db.all('SELECT * FROM saved_routers', [], (err, rows) => {
+    if (err) return res.status(500).json({ success: false, error: err.message });
+    res.json({ success: true, routers: rows });
+  });
+});
+
+// POST /api/auth/saved-routers
+router.post('/saved-routers', (req, res) => {
+  const { name, host, port, username, password } = req.body;
+  if (!name || !host || !username) {
+    return res.status(400).json({ success: false, error: 'Name, Host, and Username are required' });
+  }
+
+  const stmt = db.prepare('INSERT INTO saved_routers (name, host, port, username, password) VALUES (?, ?, ?, ?, ?)');
+  stmt.run([name, host, port || 8728, username, password], function(err) {
+    if (err) return res.status(500).json({ success: false, error: err.message });
+    res.json({ success: true, id: this.lastID });
+  });
+});
+
+// DELETE /api/auth/saved-routers/:id
+router.delete('/saved-routers/:id', (req, res) => {
+  const { id } = req.params;
+  db.run('DELETE FROM saved_routers WHERE id = ?', id, function(err) {
+    if (err) return res.status(500).json({ success: false, error: err.message });
+    res.json({ success: true });
+  });
+});
+
 module.exports = router;

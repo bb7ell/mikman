@@ -56,6 +56,7 @@
     'nav-userman': { section: 'userman', title: 'يوزر مانجر' },
     'nav-active-users': { section: 'hotspot-active', title: 'المستخدمون النشطون' },
     'userman-add': { section: 'userman-add', title: 'إضافة مستخدم يوزر مانجر' },
+    'nav-templates': { section: 'templates', title: 'قوالب الكروت' },
   };
 
   function setupNavigation() {
@@ -127,6 +128,13 @@
     refreshBtn.classList.add('spinning');
 
     try {
+      // 🚀 PERFORMANCE FIX: Disable background chatter when adding users
+      if (sectionId === 'userman-add') {
+          isRefreshing = false;
+          refreshBtn.classList.remove('spinning');
+          return;
+      }
+
       if (isManual || sectionId === 'overview') {
         fetchQuickCounts(); // run in background
       }

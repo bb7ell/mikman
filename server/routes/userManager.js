@@ -132,9 +132,9 @@ router.get('/profiles', requireAuth, async (req, res) => {
       name: p.name,
       id: p['.id']
     }));
-    res.json(profiles);
+    res.json({ success: true, profiles: profiles });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ success: false, error: err.message });
   }
 });
 

@@ -179,15 +179,45 @@ window.UsermanAdd = {
             }
         }
 
+        // Open printing tab data if switched to printing
+        if (targetTab === 'printing' && window.PrintingTab) {
+            window.PrintingTab.open();
+        }
+
+        const commonFields = document.getElementById('umCommonFields');
+        if (commonFields) {
+            commonFields.style.display = targetTab === 'printing' ? 'none' : 'block';
+        }
+
         if (this.btnSubmit) {
             const texts = {
                 single: 'إضافة المستخدم والبدء',
                 bulk: 'استيراد القائمة والبدء',
                 random: 'توليد البطاقات والبدء',
-                printing: 'قريباً...'
+                printing: ''
             };
-            this.btnSubmit.innerHTML = texts[targetTab] || 'إرسال';
-            this.btnSubmit.disabled = targetTab === 'printing';
+            if (targetTab === 'printing') {
+                this.btnSubmit.style.display = 'none';
+                if (this.btnCancel) this.btnCancel.style.display = 'none';
+                
+                // Hide common field container
+                if (commonFields) commonFields.style.display = 'none';
+                
+                // Hide any footer/action containers
+                const footer = document.querySelector('.modal-footer') || document.querySelector('.form-actions');
+                if (footer) footer.style.display = 'none';
+            } else {
+                this.btnSubmit.style.display = '';
+                if (this.btnCancel) this.btnCancel.style.display = '';
+                
+                if (commonFields) commonFields.style.display = 'block';
+                
+                const footer = document.querySelector('.modal-footer') || document.querySelector('.form-actions');
+                if (footer) footer.style.display = 'flex';
+                
+                this.btnSubmit.innerHTML = texts[targetTab] || 'إرسال';
+                this.btnSubmit.disabled = false;
+            }
         }
     },
 
@@ -205,15 +235,27 @@ window.UsermanAdd = {
     async loadInitialData() {
         if (this.profileSelect) this.profileSelect.innerHTML = '<option value="">جاري جلب الباقات...</option>';
         try {
-            const profiles = await API.getUserManagerProfiles();
+            // Profiles endpoint returns { success: true, profiles: [{name, id}] }
+            const profilesRes = await API.getUserManagerProfiles();
+            const profiles = profilesRes.profiles || profilesRes || [];
             if (this.profileSelect) {
                 this.profileSelect.innerHTML = '<option value="">-- اختر باقة --</option>' +
                     profiles.map(p => `<option value="${p.name}">${p.name}</option>`).join('');
             }
 
-            const customers = await API.getUserManagerCustomers();
+            // Customers endpoint returns [{login, id}] directly
+            const customersRaw = await API.getUserManagerCustomers();
+            // Handle both array and {customers:[]} shapes
+            const customers = Array.isArray(customersRaw)
+                ? customersRaw
+                : (customersRaw.customers || []);
             if (this.customerSelect) {
-                this.customerSelect.innerHTML = customers.map(c => `<option value="${c.login}" ${c.login === 'admin' ? 'selected' : ''}>${c.login}</option>`).join('');
+                this.customerSelect.innerHTML = customers.map(c =>
+                    `<option value="${c.login || c}" ${(c.login || c) === 'admin' ? 'selected' : ''}>${c.login || c}</option>`
+                ).join('');
+                if (!this.customerSelect.innerHTML) {
+                    this.customerSelect.innerHTML = '<option value="admin" selected>admin</option>';
+                }
             }
 
             if (window.UserManager && window.UserManager.posMap && this.locationSelect) {

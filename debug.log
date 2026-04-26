@@ -41843,3 +41843,890 @@
   "id": "wI88UgLltS7WlZgtQWXrPL9HBEarwn7s"
 }
 [2026-04-25T13:34:35.273Z] ✅ Auth Success 
+[2026-04-25T14:15:07.890Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "DhYRusigpvvrfyYTFrr3_cWSMsHcvR25"
+}
+[2026-04-25T14:15:07.890Z] ✅ Auth Success 
+[2026-04-25T14:15:37.894Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "DhYRusigpvvrfyYTFrr3_cWSMsHcvR25"
+}
+[2026-04-25T14:15:37.895Z] ✅ Auth Success 
+[2026-04-25T14:15:45.856Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "DhYRusigpvvrfyYTFrr3_cWSMsHcvR25"
+}
+[2026-04-25T14:15:45.856Z] ✅ Auth Success 
+[2026-04-25T14:15:45.857Z] 🚀 Entering /api/hotspot/active 
+[2026-04-25T15:35:53.500Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "xjjHkRwGtaApkDgvIUBJk0klw-wMBFKc"
+}
+[2026-04-25T15:35:53.500Z] ✅ Auth Success 
+[2026-04-25T15:56:12.148Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "dtzQXj2wXu2bWsGZ45kzmOzdi3P70Ny0"
+}
+[2026-04-25T15:56:12.148Z] ✅ Auth Success 
+[2026-04-25T15:56:55.208Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "g4NdWavAg6V2R3b1Zf1sKfZiDLf5sS4P"
+}
+[2026-04-25T15:56:55.209Z] ✅ Auth Success 
+[2026-04-25T15:56:57.383Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "g4NdWavAg6V2R3b1Zf1sKfZiDLf5sS4P"
+}
+[2026-04-25T15:56:57.383Z] ✅ Auth Success 
+[2026-04-25T15:56:57.383Z] 🚀 Entering /api/hotspot/active 
+[2026-04-25T16:23:26.155Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "tJIohruO5Vu6RoNDW0N8B2wjPGa_ohi5"
+}
+[2026-04-25T16:23:26.155Z] ✅ Auth Success 
+[2026-04-25T16:30:42.580Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "-6u3ca2eE6tFEAL4IZPkvbQ3hO1lw8bI"
+}
+[2026-04-25T16:30:42.580Z] ✅ Auth Success 
+[2026-04-25T16:41:39.988Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "JpPd9r8jkz85YAsFwnvbFzahQ-uUzbvL"
+}
+[2026-04-25T16:41:39.989Z] ✅ Auth Success 
+[2026-04-25T16:42:00.198Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "6GS8p-8w8ojuSUdmPLYuuarf3f9M7T7G"
+}
+[2026-04-25T16:42:00.198Z] ✅ Auth Success 
+[2026-04-25T16:46:28.811Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "n87oSfNcBFOMecC07YQrYIn12AfgBADq"
+}
+[2026-04-25T16:46:28.811Z] ✅ Auth Success 
+[2026-04-25T16:46:34.890Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QD9-GnfWyzJVYs_3AbiyLrzPJOvlwX7G"
+}
+[2026-04-25T16:46:34.890Z] ✅ Auth Success 
+[2026-04-25T17:20:31.287Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "hT1d39uLC8AGPLELhCExhrqC6DVjICgX"
+}
+[2026-04-25T17:20:31.288Z] ✅ Auth Success 
+[2026-04-25T17:22:32.872Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "hT1d39uLC8AGPLELhCExhrqC6DVjICgX"
+}
+[2026-04-25T17:22:32.872Z] ✅ Auth Success 
+[2026-04-25T17:23:16.296Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "D9POtjne-cZdF1y96Ahwu8HkSGjbjmJJ"
+}
+[2026-04-25T17:23:16.297Z] ✅ Auth Success 
+[2026-04-25T17:25:07.023Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "D9POtjne-cZdF1y96Ahwu8HkSGjbjmJJ"
+}
+[2026-04-25T17:25:07.023Z] ✅ Auth Success 
+[2026-04-25T17:33:05.536Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FPS1fKUOy7ot_VtQq1qWglH9zy1xFdBm"
+}
+[2026-04-25T17:33:05.537Z] ✅ Auth Success 
+[2026-04-25T17:38:08.516Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:38:08.516Z] ✅ Auth Success 
+[2026-04-25T17:39:10.313Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:39:10.313Z] ✅ Auth Success 
+[2026-04-25T17:39:10.314Z] 🚀 Entering /api/hotspot/active 
+[2026-04-25T17:43:39.830Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:43:39.830Z] ✅ Auth Success 
+[2026-04-25T17:48:36.164Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:48:36.164Z] ✅ Auth Success 
+[2026-04-25T17:49:15.780Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:49:15.780Z] ✅ Auth Success 
+[2026-04-25T17:52:34.313Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:52:34.313Z] ✅ Auth Success 
+[2026-04-25T17:52:34.313Z] 🚀 Entering /api/hotspot/active 
+[2026-04-25T17:53:39.168Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:53:39.169Z] ✅ Auth Success 
+[2026-04-25T17:54:16.142Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:54:16.142Z] ✅ Auth Success 
+[2026-04-25T17:57:02.422Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T17:57:02.422Z] ✅ Auth Success 
+[2026-04-25T18:00:47.974Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T18:00:47.974Z] ✅ Auth Success 
+[2026-04-25T18:05:26.300Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UIv1ka4a1tLy--U0gOuK5iYVRNFAJIUG"
+}
+[2026-04-25T18:05:26.301Z] ✅ Auth Success 
+[2026-04-25T18:08:40.884Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:08:40.884Z] ✅ Auth Success 
+[2026-04-25T18:12:04.943Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:12:04.943Z] ✅ Auth Success 
+[2026-04-25T18:13:48.879Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:13:48.880Z] ✅ Auth Success 
+[2026-04-25T18:18:31.919Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:18:31.919Z] ✅ Auth Success 
+[2026-04-25T18:21:15.311Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:21:15.311Z] ✅ Auth Success 
+[2026-04-25T18:21:35.509Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:21:35.509Z] ✅ Auth Success 
+[2026-04-25T18:22:12.128Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:22:12.128Z] ✅ Auth Success 
+[2026-04-25T18:25:37.607Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "V9HYOo-Qq_-iCQJFVeirR59nxacg4d7E"
+}
+[2026-04-25T18:25:37.607Z] ✅ Auth Success 
+[2026-04-25T18:37:48.332Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "g37e4cwuAomftuSne4AxesLiP0gHXco2"
+}
+[2026-04-25T18:37:48.332Z] ✅ Auth Success 
+[2026-04-25T18:40:36.226Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "0IOxF7eX1GnU5adOe2uVDx3-uxa4xbXK"
+}
+[2026-04-25T18:40:36.226Z] ✅ Auth Success 
+[2026-04-25T18:40:57.564Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pZ_gIRMAeKlLe8HKQpfMj5RHNVEFUJz3"
+}
+[2026-04-25T18:40:57.565Z] ✅ Auth Success 
+[2026-04-25T18:43:33.593Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T18:43:33.593Z] ✅ Auth Success 
+[2026-04-25T18:49:12.540Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T18:49:12.540Z] ✅ Auth Success 
+[2026-04-25T18:50:36.236Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T18:50:36.236Z] ✅ Auth Success 
+[2026-04-25T18:52:01.504Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pZ_gIRMAeKlLe8HKQpfMj5RHNVEFUJz3"
+}
+[2026-04-25T18:52:01.504Z] ✅ Auth Success 
+[2026-04-25T18:52:01.505Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-25T18:52:01.505Z] 🚀 [2] Executing print command on router... 
+[2026-04-25T18:52:01.582Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-25T18:52:01.582Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d1h56m11s",
+  "bytes-in": "3050140640",
+  "bytes-out": "34792174630",
+  "packets-in": "17864651",
+  "packets-out": "26694609",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-25T18:52:01.586Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-25T18:52:01.596Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pZ_gIRMAeKlLe8HKQpfMj5RHNVEFUJz3"
+}
+[2026-04-25T18:52:01.596Z] ✅ Auth Success 
+[2026-04-25T18:52:01.596Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-25T18:52:01.596Z] 🚀 [2] Executing print command on router... 
+[2026-04-25T18:52:01.659Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-25T18:52:01.662Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d1h56m11s",
+  "bytes-in": "3050140640",
+  "bytes-out": "34792174630",
+  "packets-in": "17864651",
+  "packets-out": "26694609",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-25T18:52:01.662Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-25T18:57:55.976Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T18:57:55.977Z] ✅ Auth Success 
+[2026-04-25T19:02:13.872Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T19:02:13.873Z] ✅ Auth Success 
+[2026-04-25T19:03:03.716Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T19:03:03.716Z] ✅ Auth Success 
+[2026-04-25T19:04:33.938Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T19:04:33.938Z] ✅ Auth Success 
+[2026-04-25T19:08:54.554Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T19:08:54.554Z] ✅ Auth Success 
+[2026-04-25T19:13:08.451Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "l5h9muf-eD42VN3AqwgUovLfxf3Ho-o6"
+}
+[2026-04-25T19:13:08.451Z] ✅ Auth Success 
+[2026-04-25T19:15:10.735Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "SoYY9bVQRh3ZKB3qtaessQCJtch_Ie9t"
+}
+[2026-04-25T19:15:10.735Z] ✅ Auth Success 
+[2026-04-25T19:20:59.882Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YtoSa__HDjPH5QvDfJZN58PKIYAlrXPi"
+}
+[2026-04-25T19:20:59.883Z] ✅ Auth Success 
+[2026-04-25T19:21:41.170Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "71xCQ3-AunX2oqV3g__lMvT4reJQeVMi"
+}
+[2026-04-25T19:21:41.171Z] ✅ Auth Success 
+[2026-04-25T19:28:10.959Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "71xCQ3-AunX2oqV3g__lMvT4reJQeVMi"
+}
+[2026-04-25T19:28:10.969Z] ✅ Auth Success 
+[2026-04-25T19:33:39.039Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "71xCQ3-AunX2oqV3g__lMvT4reJQeVMi"
+}
+[2026-04-25T19:33:39.040Z] ✅ Auth Success 
+[2026-04-25T19:36:16.077Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "wnvPsb6SCRMuaBYtPoTriKx0iOe5TduV"
+}
+[2026-04-25T19:36:16.078Z] ✅ Auth Success 
+[2026-04-25T19:38:51.621Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "wnvPsb6SCRMuaBYtPoTriKx0iOe5TduV"
+}
+[2026-04-25T19:38:51.622Z] ✅ Auth Success 
+[2026-04-25T19:45:52.351Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "wnvPsb6SCRMuaBYtPoTriKx0iOe5TduV"
+}
+[2026-04-25T19:45:52.352Z] ✅ Auth Success 
+[2026-04-25T19:49:19.402Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "Xn1hShnsgC7N9y4D8xCfHI6Qf5XIscJb"
+}
+[2026-04-25T19:49:19.408Z] ✅ Auth Success 
+[2026-04-25T19:51:30.613Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "Xn1hShnsgC7N9y4D8xCfHI6Qf5XIscJb"
+}
+[2026-04-25T19:51:30.615Z] ✅ Auth Success 
+[2026-04-25T19:52:54.631Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "Ur2-gUXaKzCVdmBgeKbvarbQ3pMm8LWU"
+}
+[2026-04-25T19:52:54.635Z] ✅ Auth Success 
+[2026-04-25T19:56:42.694Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "rVYDCdo_AMNbhov-f5wOu7gNVv7iH1Sh"
+}
+[2026-04-25T19:56:42.696Z] ✅ Auth Success 
+[2026-04-25T19:58:21.599Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "rVYDCdo_AMNbhov-f5wOu7gNVv7iH1Sh"
+}
+[2026-04-25T19:58:21.607Z] ✅ Auth Success 
+[2026-04-25T20:02:24.174Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "rVYDCdo_AMNbhov-f5wOu7gNVv7iH1Sh"
+}
+[2026-04-25T20:02:24.175Z] ✅ Auth Success 
+[2026-04-25T20:07:38.848Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "rVYDCdo_AMNbhov-f5wOu7gNVv7iH1Sh"
+}
+[2026-04-25T20:07:38.848Z] ✅ Auth Success 
+[2026-04-25T20:09:11.046Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "3Vl1LX9_P9uqln-JMvP-zBSf4pF-Elyp"
+}
+[2026-04-25T20:09:11.049Z] ✅ Auth Success 
+[2026-04-25T20:23:08.530Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "3Vl1LX9_P9uqln-JMvP-zBSf4pF-Elyp"
+}
+[2026-04-25T20:23:08.530Z] ✅ Auth Success 
+[2026-04-25T20:24:47.293Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "4D3dtJL-r0XEx-ltHSktevS6EAi3t2hd"
+}
+[2026-04-25T20:24:47.295Z] ✅ Auth Success 
+[2026-04-25T20:32:15.876Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YUoZwh2itwmZQLU4Ry-uDfdAUajXB4_O"
+}
+[2026-04-25T20:32:15.877Z] ✅ Auth Success 
+[2026-04-25T20:35:36.392Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YUoZwh2itwmZQLU4Ry-uDfdAUajXB4_O"
+}
+[2026-04-25T20:35:36.393Z] ✅ Auth Success 
+[2026-04-25T20:41:40.729Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "w_tcTKLIGtKBZROvzD09nqBXtMJnWeJl"
+}
+[2026-04-25T20:41:40.730Z] ✅ Auth Success 
+[2026-04-25T20:43:25.037Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YUoZwh2itwmZQLU4Ry-uDfdAUajXB4_O"
+}
+[2026-04-25T20:43:25.038Z] ✅ Auth Success 
+[2026-04-25T20:51:27.632Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "4kcOtQR8mvHVhEi2e1Wtc7a70hvbj1jn"
+}
+[2026-04-25T20:51:27.633Z] ✅ Auth Success 
+[2026-04-25T20:55:11.811Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "4kcOtQR8mvHVhEi2e1Wtc7a70hvbj1jn"
+}
+[2026-04-25T20:55:11.812Z] ✅ Auth Success 
+[2026-04-25T21:00:03.057Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "Po6lIs4a955KuDS6-enUFS2Ryfd8-4cw"
+}
+[2026-04-25T21:00:03.058Z] ✅ Auth Success 
+[2026-04-25T21:03:03.586Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "k-Cpn3JTPQ6HALOdFbbAz47rSTJ005Ia"
+}
+[2026-04-25T21:03:03.587Z] ✅ Auth Success 
+[2026-04-25T21:09:56.822Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "siZGLKcgb4iSwBZEQuVGSSAm8QX6rJfW"
+}
+[2026-04-25T21:09:56.823Z] ✅ Auth Success 
+[2026-04-25T21:12:16.109Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "siZGLKcgb4iSwBZEQuVGSSAm8QX6rJfW"
+}
+[2026-04-25T21:12:16.111Z] ✅ Auth Success 
+[2026-04-25T21:20:18.149Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "siZGLKcgb4iSwBZEQuVGSSAm8QX6rJfW"
+}
+[2026-04-25T21:20:18.150Z] ✅ Auth Success 
+[2026-04-25T21:21:04.282Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "siZGLKcgb4iSwBZEQuVGSSAm8QX6rJfW"
+}
+[2026-04-25T21:21:04.283Z] ✅ Auth Success 
+[2026-04-25T21:31:54.124Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "siZGLKcgb4iSwBZEQuVGSSAm8QX6rJfW"
+}
+[2026-04-25T21:31:54.125Z] ✅ Auth Success 
+[2026-04-25T21:36:28.395Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "siZGLKcgb4iSwBZEQuVGSSAm8QX6rJfW"
+}
+[2026-04-25T21:36:28.395Z] ✅ Auth Success 
+[2026-04-25T21:43:27.730Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ai4PfVH4WPZS-CePmPiuJ1Vo8KUlzAi-"
+}
+[2026-04-25T21:43:27.730Z] ✅ Auth Success 
+[2026-04-25T21:47:41.505Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ai4PfVH4WPZS-CePmPiuJ1Vo8KUlzAi-"
+}
+[2026-04-25T21:47:41.506Z] ✅ Auth Success 
+[2026-04-25T21:48:20.449Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ai4PfVH4WPZS-CePmPiuJ1Vo8KUlzAi-"
+}
+[2026-04-25T21:48:20.450Z] ✅ Auth Success 
+[2026-04-25T21:57:36.025Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T21:57:36.026Z] ✅ Auth Success 
+[2026-04-25T21:57:55.837Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T21:57:55.840Z] ✅ Auth Success 
+[2026-04-25T21:58:13.196Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T21:58:13.197Z] ✅ Auth Success 
+[2026-04-25T22:00:05.851Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T22:00:05.852Z] ✅ Auth Success 
+[2026-04-25T22:04:05.308Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T22:04:05.309Z] ✅ Auth Success 
+[2026-04-25T22:04:25.276Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T22:04:25.277Z] ✅ Auth Success 
+[2026-04-25T22:06:20.315Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T22:06:20.317Z] ✅ Auth Success 
+[2026-04-25T22:06:47.684Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T22:06:47.684Z] ✅ Auth Success 
+[2026-04-25T22:08:05.602Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "FzEChi0m-LfcxOGgL2Z0SUCIy8jgBG3K"
+}
+[2026-04-25T22:08:05.603Z] ✅ Auth Success 
+[2026-04-25T22:08:05.604Z] 🚀 Entering /api/hotspot/active 
+[2026-04-25T22:09:21.334Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LPoTMAIBnGP4817PeXdU10I5CyjhZbl_"
+}
+[2026-04-25T22:09:21.335Z] ✅ Auth Success 
+[2026-04-25T22:11:50.305Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LPoTMAIBnGP4817PeXdU10I5CyjhZbl_"
+}
+[2026-04-25T22:11:50.306Z] ✅ Auth Success 
+[2026-04-25T22:11:57.749Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LPoTMAIBnGP4817PeXdU10I5CyjhZbl_"
+}
+[2026-04-25T22:11:57.750Z] ✅ Auth Success 
+[2026-04-25T22:12:14.838Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LPoTMAIBnGP4817PeXdU10I5CyjhZbl_"
+}
+[2026-04-25T22:12:14.838Z] ✅ Auth Success 
+[2026-04-25T22:13:51.003Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LPoTMAIBnGP4817PeXdU10I5CyjhZbl_"
+}
+[2026-04-25T22:13:51.005Z] ✅ Auth Success 
+[2026-04-25T22:15:03.847Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ud1QnmruivHv2ful69n1ONwf0JkkIhlY"
+}
+[2026-04-25T22:15:03.850Z] ✅ Auth Success 
+[2026-04-25T22:16:51.598Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ud1QnmruivHv2ful69n1ONwf0JkkIhlY"
+}
+[2026-04-25T22:16:51.599Z] ✅ Auth Success 
+[2026-04-25T22:31:05.218Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ud1QnmruivHv2ful69n1ONwf0JkkIhlY"
+}
+[2026-04-25T22:31:05.224Z] ✅ Auth Success 
+[2026-04-25T22:32:29.326Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "ud1QnmruivHv2ful69n1ONwf0JkkIhlY"
+}
+[2026-04-25T22:32:29.327Z] ✅ Auth Success 
+[2026-04-25T22:35:05.514Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "qvnH9a2lTxpR4-IkJIkq7cpkD-qAA1iO"
+}
+[2026-04-25T22:35:05.515Z] ✅ Auth Success 
+[2026-04-25T22:37:26.006Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "qvnH9a2lTxpR4-IkJIkq7cpkD-qAA1iO"
+}
+[2026-04-25T22:37:26.007Z] ✅ Auth Success 
+[2026-04-25T22:41:44.315Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "4du_Rlczf8mGYwglSZYifHD1gd7AYlnG"
+}
+[2026-04-25T22:41:44.328Z] ✅ Auth Success 
+[2026-04-25T22:41:57.373Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "4du_Rlczf8mGYwglSZYifHD1gd7AYlnG"
+}
+[2026-04-25T22:41:57.396Z] ✅ Auth Success 
+[2026-04-25T22:52:45.422Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "4du_Rlczf8mGYwglSZYifHD1gd7AYlnG"
+}
+[2026-04-25T22:52:45.434Z] ✅ Auth Success 
+[2026-04-25T22:56:56.907Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "nsw5DAfjz0kFTrc95GVOUs3HZhx_H0u6"
+}
+[2026-04-25T22:56:56.926Z] ✅ Auth Success 
+[2026-04-25T22:59:05.611Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "nsw5DAfjz0kFTrc95GVOUs3HZhx_H0u6"
+}
+[2026-04-25T22:59:05.615Z] ✅ Auth Success 
+[2026-04-25T23:02:19.159Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "rWBg50G8QDLZQeeoZHetXBuAXSj4C0EX"
+}
+[2026-04-25T23:02:19.302Z] ✅ Auth Success 
+[2026-04-25T23:03:14.743Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "rWBg50G8QDLZQeeoZHetXBuAXSj4C0EX"
+}
+[2026-04-25T23:03:14.757Z] ✅ Auth Success 
+[2026-04-25T23:06:17.483Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "y1qCfrqUaKBxjFvpeZRb8UveyhygLxig"
+}
+[2026-04-25T23:06:17.608Z] ✅ Auth Success 
+[2026-04-25T23:09:10.561Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "N9OTuP8X7l12krNioI3Xsk0o-c1pcBGT"
+}
+[2026-04-25T23:09:10.567Z] ✅ Auth Success 
+[2026-04-25T23:11:31.279Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "6aqdHdqyeOXSaVeS_blYNGPsYnqiAqpC"
+}
+[2026-04-25T23:11:31.340Z] ✅ Auth Success 
+[2026-04-25T23:21:44.775Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:21:44.907Z] ✅ Auth Success 
+[2026-04-25T23:29:22.367Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:29:22.384Z] ✅ Auth Success 
+[2026-04-25T23:30:17.085Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:30:17.101Z] ✅ Auth Success 
+[2026-04-25T23:30:34.173Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:30:34.179Z] ✅ Auth Success 
+[2026-04-25T23:30:34.181Z] 🚀 Entering /api/hotspot/active 
+[2026-04-25T23:30:50.977Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:30:50.978Z] ✅ Auth Success 
+[2026-04-25T23:30:50.981Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-25T23:30:50.982Z] 🚀 [2] Executing print command on router... 
+[2026-04-25T23:30:51.062Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-25T23:30:51.072Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d1h56m11s",
+  "bytes-in": "3050140640",
+  "bytes-out": "34792174630",
+  "packets-in": "17864651",
+  "packets-out": "26694609",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-25T23:30:51.080Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-25T23:30:51.264Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:30:51.269Z] ✅ Auth Success 
+[2026-04-25T23:30:51.274Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-25T23:30:51.275Z] 🚀 [2] Executing print command on router... 
+[2026-04-25T23:30:51.359Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-25T23:30:51.372Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d1h56m11s",
+  "bytes-in": "3050140640",
+  "bytes-out": "34792174630",
+  "packets-in": "17864651",
+  "packets-out": "26694609",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-25T23:30:51.379Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-25T23:33:18.062Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:33:18.064Z] ✅ Auth Success 
+[2026-04-25T23:33:39.764Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:33:39.766Z] ✅ Auth Success 
+[2026-04-25T23:35:37.414Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:35:37.421Z] ✅ Auth Success 
+[2026-04-25T23:36:56.531Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:36:56.533Z] ✅ Auth Success 
+[2026-04-25T23:38:12.910Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:38:12.911Z] ✅ Auth Success 
+[2026-04-25T23:39:23.570Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:39:23.571Z] ✅ Auth Success 
+[2026-04-25T23:39:51.040Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:39:51.041Z] ✅ Auth Success 
+[2026-04-25T23:40:32.606Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:40:32.608Z] ✅ Auth Success 
+[2026-04-25T23:42:07.981Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:42:07.987Z] ✅ Auth Success 
+[2026-04-25T23:44:15.427Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:44:15.433Z] ✅ Auth Success 
+[2026-04-25T23:45:59.787Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "UpgVG22YqIBjcPiv40Fxey5M11G2z3ml"
+}
+[2026-04-25T23:45:59.793Z] ✅ Auth Success 
+[2026-04-25T23:46:48.296Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "CbJp_c474mD1Q4DBZWIggoKxClx2y-6D"
+}
+[2026-04-25T23:46:48.297Z] ✅ Auth Success 
+[2026-04-25T23:48:52.332Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "CbJp_c474mD1Q4DBZWIggoKxClx2y-6D"
+}
+[2026-04-25T23:48:52.333Z] ✅ Auth Success 
+[2026-04-25T23:49:24.746Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "OWxaYsyMr0wELK8eMWrri93Uix3AVQcE"
+}
+[2026-04-25T23:49:24.747Z] ✅ Auth Success 
+[2026-04-25T23:51:20.418Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pI6Z7mpDBLVMjgfPTp4JC7aWLZKkoryv"
+}
+[2026-04-25T23:51:20.423Z] ✅ Auth Success 
+[2026-04-25T23:56:18.015Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pI6Z7mpDBLVMjgfPTp4JC7aWLZKkoryv"
+}
+[2026-04-25T23:56:18.016Z] ✅ Auth Success 
+[2026-04-25T23:59:04.976Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pI6Z7mpDBLVMjgfPTp4JC7aWLZKkoryv"
+}
+[2026-04-25T23:59:04.977Z] ✅ Auth Success 
+[2026-04-26T00:00:38.377Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "pI6Z7mpDBLVMjgfPTp4JC7aWLZKkoryv"
+}
+[2026-04-26T00:00:38.381Z] ✅ Auth Success 
+[2026-04-26T00:00:57.097Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "jelxgK-3uAcVRKS7vkMMyGh5DcWx6ldw"
+}
+[2026-04-26T00:00:57.097Z] ✅ Auth Success 
+[2026-04-26T00:02:10.888Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "7-Bed440h7ASg6uvXwbEnhBbsoGXTxF2"
+}
+[2026-04-26T00:02:10.889Z] ✅ Auth Success 
+[2026-04-26T00:04:23.167Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "7-Bed440h7ASg6uvXwbEnhBbsoGXTxF2"
+}
+[2026-04-26T00:04:23.167Z] ✅ Auth Success 
+[2026-04-26T00:04:43.696Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "JO-21Gp1lfR8RbmcKEKuSJqVyjF6Dus_"
+}
+[2026-04-26T00:04:43.697Z] ✅ Auth Success 
+[2026-04-26T00:07:17.487Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "XQ9xFUWTYuJ8MoBY-rOuNsT4SJHewBcE"
+}
+[2026-04-26T00:07:17.487Z] ✅ Auth Success 
+[2026-04-26T00:09:41.752Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "xIqd02NuL_TsZxxqiVROfJXWQva7W5J5"
+}
+[2026-04-26T00:09:41.753Z] ✅ Auth Success 
+[2026-04-26T00:14:00.892Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "s00xbqAY73UpMz6JCIMOcTqQY-8uH2b1"
+}
+[2026-04-26T00:14:00.892Z] ✅ Auth Success 
+[2026-04-26T00:14:53.253Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "AW7s01ElmOanZErvMCGaYFdo5dFnqlVp"
+}
+[2026-04-26T00:14:53.254Z] ✅ Auth Success 
+[2026-04-26T00:16:00.734Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "lV1uByxQdrUXUP0lpKCWBNNCDG3Nzv3Z"
+}
+[2026-04-26T00:16:00.734Z] ✅ Auth Success 
+[2026-04-26T00:17:47.761Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "30owJ44M66XhTe0U-uzQzxSIa_ve_R-i"
+}
+[2026-04-26T00:17:47.762Z] ✅ Auth Success 
+[2026-04-26T00:18:55.917Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "GOosLPeG4NIQZK52hSjn7kxRM3PazV7U"
+}
+[2026-04-26T00:18:55.917Z] ✅ Auth Success 
+[2026-04-26T00:24:24.881Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "30owJ44M66XhTe0U-uzQzxSIa_ve_R-i"
+}
+[2026-04-26T00:24:24.881Z] ✅ Auth Success 
+[2026-04-26T00:26:52.364Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "WRjDePsRL2Ru1A4UYAQu3b3-nUDF-Mzs"
+}
+[2026-04-26T00:26:52.365Z] ✅ Auth Success 
+[2026-04-26T00:28:32.031Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "yJOzkUh1gTJ9cabI4oQP2UU3MOFLYxfo"
+}
+[2026-04-26T00:28:32.031Z] ✅ Auth Success 
+[2026-04-26T00:31:04.075Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "91pAl8jD8FFWYiA8D_SxUZJtpcwlSMfA"
+}
+[2026-04-26T00:31:04.075Z] ✅ Auth Success 
+[2026-04-26T00:37:38.531Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "91pAl8jD8FFWYiA8D_SxUZJtpcwlSMfA"
+}
+[2026-04-26T00:37:38.531Z] ✅ Auth Success 
+[2026-04-26T00:37:38.532Z] 🚀 Entering /api/hotspot/active 
+[2026-04-26T00:38:51.336Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "MkpFWKcjXX4o4TRFAcwsmmDo3wLFcWPl"
+}
+[2026-04-26T00:38:51.336Z] ✅ Auth Success 
+[2026-04-26T00:55:15.159Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "a01-mu17Zyy8GEx4JbnG2Lay9XVdQiJg"
+}
+[2026-04-26T00:55:15.159Z] ✅ Auth Success 
+[2026-04-26T01:01:02.838Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QItD4kqWYMJ3yBuLFafFYYc9IX9nxtIc"
+}
+[2026-04-26T01:01:02.838Z] ✅ Auth Success 
+[2026-04-26T01:09:24.949Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "OrPPAha4ugmwxfaUW9aCXfLB4N1Oj9yC"
+}
+[2026-04-26T01:09:24.950Z] ✅ Auth Success 

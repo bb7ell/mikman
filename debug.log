@@ -42730,3 +42730,227 @@
   "id": "OrPPAha4ugmwxfaUW9aCXfLB4N1Oj9yC"
 }
 [2026-04-26T01:09:24.950Z] ✅ Auth Success 
+[2026-04-26T01:13:25.843Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "TLOm7dJt0VHA5VopyjBGvaNgm4rLmlDp"
+}
+[2026-04-26T01:13:25.843Z] ✅ Auth Success 
+[2026-04-26T02:11:34.537Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "PzJRLFy0FmMKFoIy-wLo9nBoGSG7lgsG"
+}
+[2026-04-26T02:11:34.538Z] ✅ Auth Success 
+[2026-04-26T02:32:10.680Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "xFLAjtxDaEB_MyDkPFhZ0BLBygMUp5nf"
+}
+[2026-04-26T02:32:10.681Z] ✅ Auth Success 
+[2026-04-26T02:37:44.487Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "iwJaFyqJQigJ1Yze4SmxY33ek8O2rB-z"
+}
+[2026-04-26T02:37:44.488Z] ✅ Auth Success 
+[2026-04-26T02:42:04.119Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LrrM7JADC4BAnawiN_FHKEHL5WblXWoQ"
+}
+[2026-04-26T02:42:04.119Z] ✅ Auth Success 
+[2026-04-26T02:52:52.232Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "wZjHBa8RFfDKn0qc46FIvnWk1rfiRgPJ"
+}
+[2026-04-26T02:52:52.235Z] ✅ Auth Success 
+[2026-04-26T03:08:08.693Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "wZjHBa8RFfDKn0qc46FIvnWk1rfiRgPJ"
+}
+[2026-04-26T03:08:08.694Z] ✅ Auth Success 
+[2026-04-26T03:16:21.942Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "wZjHBa8RFfDKn0qc46FIvnWk1rfiRgPJ"
+}
+[2026-04-26T03:16:21.942Z] ✅ Auth Success 
+[2026-04-26T03:19:38.422Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "emHetoBQrWbvscgSfIm1SU3EjaizTRTt"
+}
+[2026-04-26T03:19:38.422Z] ✅ Auth Success 
+[2026-04-26T03:31:00.282Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "Fg-CslVAaRX6SUm_QW6iq4tNFoUwQxxe"
+}
+[2026-04-26T03:31:00.282Z] ✅ Auth Success 
+[2026-04-26T03:37:29.972Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "LrM4xrvbOPfW1DWT934RbmBCJXzgp_cX"
+}
+[2026-04-26T03:37:29.972Z] ✅ Auth Success 
+[2026-04-26T03:43:49.556Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "-lnlTCRviwKX1b8uJtit1vs2CvRoWNCd"
+}
+[2026-04-26T03:43:49.557Z] ✅ Auth Success 
+[2026-04-26T03:50:16.244Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "_nF1yW9ppgTiUNSns0ANGdRPLfV_lQhg"
+}
+[2026-04-26T03:50:16.245Z] ✅ Auth Success 
+[2026-04-26T03:57:02.697Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "sXdUz2d6jT0yXk0Ro_ZPm4AZR8zaxNdX"
+}
+[2026-04-26T03:57:02.697Z] ✅ Auth Success 
+[2026-04-26T10:49:48.410Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YN9pZvtDEw3QJNK48cB-9WQ35jlprWkZ"
+}
+[2026-04-26T10:49:48.410Z] ✅ Auth Success 
+[2026-04-26T10:56:50.282Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YN9pZvtDEw3QJNK48cB-9WQ35jlprWkZ"
+}
+[2026-04-26T10:56:50.283Z] ✅ Auth Success 
+[2026-04-26T10:56:50.283Z] 🚀 Entering /api/hotspot/active 
+[2026-04-26T10:57:00.542Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YN9pZvtDEw3QJNK48cB-9WQ35jlprWkZ"
+}
+[2026-04-26T10:57:00.542Z] ✅ Auth Success 
+[2026-04-26T10:57:00.543Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-26T10:57:00.543Z] 🚀 [2] Executing print command on router... 
+[2026-04-26T10:57:00.617Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-26T10:57:00.617Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d4h24m49s",
+  "bytes-in": "3088480504",
+  "bytes-out": "35464391111",
+  "packets-in": "18205875",
+  "packets-out": "27185094",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-26T10:57:00.617Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-26T10:57:00.625Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "YN9pZvtDEw3QJNK48cB-9WQ35jlprWkZ"
+}
+[2026-04-26T10:57:00.625Z] ✅ Auth Success 
+[2026-04-26T10:57:00.625Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-26T10:57:00.625Z] 🚀 [2] Executing print command on router... 
+[2026-04-26T10:57:00.686Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-26T10:57:00.686Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d4h24m49s",
+  "bytes-in": "3088480504",
+  "bytes-out": "35464391111",
+  "packets-in": "18205875",
+  "packets-out": "27185094",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-26T10:57:00.686Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-26T11:16:59.392Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "iTIre7zrNHVows8CuIGdWAthu0u_6G2Q"
+}
+[2026-04-26T11:16:59.392Z] ✅ Auth Success 
+[2026-04-26T11:18:38.625Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "iTIre7zrNHVows8CuIGdWAthu0u_6G2Q"
+}
+[2026-04-26T11:18:38.625Z] ✅ Auth Success 
+[2026-04-26T11:18:38.626Z] 🚀 Entering /api/hotspot/active 
+[2026-04-26T11:18:57.320Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "iTIre7zrNHVows8CuIGdWAthu0u_6G2Q"
+}
+[2026-04-26T11:18:57.320Z] ✅ Auth Success 
+[2026-04-26T12:10:35.358Z] 🔐 Checking Auth... {
+  "id": "nDvwXcvVfalhBEibP-s70-0whSC5bZ_Y"
+}
+[2026-04-26T12:10:35.359Z] ❌ Auth Failed: User not connected or session lost 
+[2026-04-26T12:11:09.132Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QVjy3aVE2LcN-90OzTd33U0wMKsqp40T"
+}
+[2026-04-26T12:11:09.134Z] ✅ Auth Success 
+[2026-04-26T12:11:17.176Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QVjy3aVE2LcN-90OzTd33U0wMKsqp40T"
+}
+[2026-04-26T12:11:17.177Z] ✅ Auth Success 
+[2026-04-26T12:11:17.178Z] 🚀 Entering /api/hotspot/active 
+[2026-04-26T12:22:30.066Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QVjy3aVE2LcN-90OzTd33U0wMKsqp40T"
+}
+[2026-04-26T12:22:30.066Z] ✅ Auth Success 
+[2026-04-26T12:22:30.066Z] 🚀 Entering /api/hotspot/active 
+[2026-04-26T12:22:44.843Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QVjy3aVE2LcN-90OzTd33U0wMKsqp40T"
+}
+[2026-04-26T12:22:44.843Z] ✅ Auth Success 
+[2026-04-26T12:22:44.844Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-26T12:22:44.844Z] 🚀 [2] Executing print command on router... 
+[2026-04-26T12:22:44.918Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-26T12:22:44.918Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d5h3m4s",
+  "bytes-in": "3104451630",
+  "bytes-out": "35711124761",
+  "packets-in": "18343029",
+  "packets-out": "27361618",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-26T12:22:44.919Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-26T12:22:44.925Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QVjy3aVE2LcN-90OzTd33U0wMKsqp40T"
+}
+[2026-04-26T12:22:44.926Z] ✅ Auth Success 
+[2026-04-26T12:22:44.926Z] 🚀 [1] Entering /api/hotspot/users 
+[2026-04-26T12:22:44.926Z] 🚀 [2] Executing print command on router... 
+[2026-04-26T12:22:44.991Z] 🚀 [3] Data received from router. Count: 23
+[2026-04-26T12:22:44.992Z] 🚀 [4] Sample Raw Item: {
+  ".id": "*7",
+  "name": "moha5pro",
+  "profile": "speed_apply",
+  "email": "30@nobind.com",
+  "limit-uptime": "4w2d",
+  "limit-bytes-total": "54760833024",
+  "uptime": "6d5h3m4s",
+  "bytes-in": "3104451630",
+  "bytes-out": "35711124761",
+  "packets-in": "18343029",
+  "packets-out": "27361618",
+  "dynamic": "false",
+  "disabled": "false",
+  "comment": "apr/05/2026_17:50:07<ÙØ­ÙØ¯ Ø³Ø§ÙÙ Ø¨Ù Ø¶Ø¨ÙØ¹>$5000$"
+}
+[2026-04-26T12:22:44.992Z] 🚀 [5] Comment Hex: "6170722f30352f323032365f31373a35303a30373cd985d8add985d8af20d8b3d8a7d984d98520d8a8d98620d8b6d8a8d98ad8b93e243530303024"
+[2026-04-26T12:22:53.801Z] 🔐 Checking Auth... {
+  "connected": true,
+  "id": "QVjy3aVE2LcN-90OzTd33U0wMKsqp40T"
+}
+[2026-04-26T12:22:53.801Z] ✅ Auth Success 
+[2026-04-26T12:22:53.801Z] 🚀 Entering /api/hotspot/active 

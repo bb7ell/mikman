@@ -1685,6 +1685,193 @@ select option {
 
 .btn-open-pdf:hover { filter: brightness(1.15); transform: scale(1.03); }
 
+/* ── Smart Predictor Enhanced ── */
+.smart-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.smart-metric-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.smart-metric-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(124,58,237,0.3);
+}
+
+.smart-metric-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.smart-metric-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.smart-metric-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.smart-metric-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.smart-metric-value .smart-unit {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.smart-metric-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Utilization Bar */
+.smart-util-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.smart-util-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+/* Cost & Waste Row */
+.smart-cost-waste {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.smart-cost-item, .smart-waste-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.85rem;
+}
+
+.smart-cost-label, .smart-waste-label {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.smart-cost-value {
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.smart-waste-value {
+  font-weight: 600;
+  color: var(--green);
+}
+
+/* Tips Section */
+.smart-tips {
+  margin-top: 14px;
+  padding: 12px;
+  background: rgba(124,58,237,0.06);
+  border: 1px solid rgba(124,58,237,0.15);
+  border-radius: 10px;
+}
+
+.smart-tips-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+.smart-tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.smart-tip-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+}
+
+.smart-tip-item.good {
+  border-right: 3px solid var(--green);
+}
+
+.smart-tip-item.warning {
+  border-right: 3px solid var(--orange);
+}
+
+.smart-tip-item.info {
+  border-right: 3px solid var(--cyan);
+}
+
+.smart-tip-icon {
+  font-size: 1rem;
+}
+
+.smart-tip-text {
+  color: var(--text-secondary);
+}
+
+/* Preview Section */
+.smart-preview {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.smart-preview-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+#smartPreviewCanvas {
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  background: white;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ── Upload Zone ── */
 .upload-zone-compact {
   text-align: center;
@@ -1696,6 +1883,8 @@ select option {
   .print-form-grid-3 { grid-template-columns: 1fr 1fr; }
   .print-options-grid { grid-template-columns: 1fr; }
   .template-editor-split { grid-template-columns: 1fr; }
+  .smart-analysis-grid { grid-template-columns: 1fr; }
+  .smart-cost-waste { flex-direction: column; gap: 10px; }
   .smart-predictor-controls { flex-wrap: wrap; }
 }
 

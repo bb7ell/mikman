@@ -1492,6 +1492,13 @@
               </select>
             </div>
 
+            <div class="hs-group">
+              <label><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M8 2v20M2 10h20M16 2v20M2 14h20M12 2v20M2 18h20" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg> عدد الاعمده</label>
+              <input type="number" id="tplColumns" value="3" min="1" max="10" placeholder="عدد الأعمدة" />
+            </div>
+
             <div class="editor-divider"></div>
 
             <div class="controls-grid-2col">
@@ -1619,15 +1626,91 @@
               </button>
             </div>
 
-            <div id="smartPredictor" class="smart-info-mini">
-              <h4><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
-                  style="vertical-align:middle; margin-left:5px;">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg> تحليل الكفاءة الذكي</h4>
-              <p id="analysisText">بانتظار رفع صورة لتحليل أبعاد الطباعة واستهلاك الورق...</p>
-            </div>
+             <div id="smartPredictor" class="smart-info-mini">
+               <h4><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                   style="vertical-align:middle; margin-left:5px;">
+                   <circle cx="12" cy="12" r="10"></circle>
+                   <line x1="12" y1="16" x2="12" y2="12"></line>
+                   <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                 </svg> تحليل الكفاءة الذكي</h4>
+               
+               <!-- Main Metrics Grid -->
+               <div class="smart-analysis-grid">
+                 <!-- Card Info -->
+                 <div class="smart-metric-card" id="metricCardDims">
+                   <div class="smart-metric-icon">📐</div>
+                   <div class="smart-metric-content">
+                     <div class="smart-metric-label">أبعاد الكرت</div>
+                     <div class="smart-metric-value" id="smartCardDims">—</div>
+                     <div class="smart-metric-sub" id="smartAspectRatio">—</div>
+                   </div>
+                 </div>
+
+                 <!-- Layout Config -->
+                 <div class="smart-metric-card" id="metricLayout">
+                   <div class="smart-metric-icon">📑</div>
+                   <div class="smart-metric-content">
+                     <div class="smart-metric-label">تخطيط الصفحة</div>
+                     <div class="smart-metric-value" id="smartLayout">—</div>
+                     <div class="smart-metric-sub" id="smartPageSize">A4 (210×297 مم)</div>
+                   </div>
+                 </div>
+
+                 <!-- Output -->
+                 <div class="smart-metric-card" id="metricOutput">
+                   <div class="smart-metric-icon">🖨️</div>
+                   <div class="smart-metric-content">
+                     <div class="smart-metric-label">النتيجة</div>
+                     <div class="smart-metric-value">
+                       <span id="smartTotalCards">—</span>
+                       <span class="smart-unit">كرت/صفحة</span>
+                     </div>
+                     <div class="smart-metric-sub" id="smartRowsInfo">—</div>
+                   </div>
+                 </div>
+
+                 <!-- Utilization -->
+                 <div class="smart-metric-card" id="metricUtil">
+                   <div class="smart-metric-icon">📊</div>
+                   <div class="smart-metric-content">
+                     <div class="smart-metric-label">استهلاك الورق</div>
+                     <div class="smart-metric-value">
+                       <span id="smartUtilPct">—</span>
+                       <span class="smart-unit">%</span>
+                     </div>
+                     <div class="smart-util-bar">
+                       <div class="smart-util-fill" id="smartUtilFill"></div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+
+               <!-- Cost & Waste Section -->
+               <div class="smart-cost-waste" id="smartCostWaste">
+                 <div class="smart-cost-item">
+                   <span class="smart-cost-label">التكلفة التقريبية لكل كرت</span>
+                   <span class="smart-cost-value" id="smartCostPerCard">—</span>
+                 </div>
+                 <div class="smart-waste-item">
+                   <span class="smart-waste-label"> الهدر المتوقع (لـ 100 كرت)</span>
+                   <span class="smart-waste-value" id="smartWaste">—</span>
+                 </div>
+               </div>
+
+               <!-- Optimization Tips -->
+               <div class="smart-tips" id="smartTips">
+                 <div class="smart-tips-title">💡 نصائح التحسين</div>
+                 <ul class="smart-tips-list" id="smartTipsList">
+                   <!-- Populated by JS -->
+                 </ul>
+               </div>
+
+               <!-- Preview Thumbnail -->
+               <div class="smart-preview" id="smartPreview">
+                 <div class="smart-preview-label">معاينة التخطيط</div>
+                 <canvas id="smartPreviewCanvas" width="200" height="283"></canvas>
+               </div>
+             </div>
           </div>
 
           <input type="file" id="bgImageInput" accept="image/*" style="display: none;" />

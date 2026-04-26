@@ -96,10 +96,12 @@
 
     // Additional logic for sections
     if (sectionId === 'userman-add' && window.UsermanAdd) {
-      // Only load if not already loaded to prevent flickering
       window.UsermanAdd.showSection();
+    } else if (sectionId === 'templates' && window.TemplateEditor) {
+      if (typeof window.TemplateEditor.refreshData === 'function') {
+        window.TemplateEditor.refreshData();
+      }
     } else {
-      // Fetch data for the newly activated section
       refreshCurrentSection();
     }
   }
